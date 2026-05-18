@@ -1,6 +1,10 @@
 # SMART RISK Monte-Carlo-Simulation Landingpage
 
-Eigenstaendige Landingpage fuer die Desktop-App SMART RISK Monte-Carlo-Simulation.
+Eigenstaendige Landingpage fuer die lokale Desktop-App SMART RISK
+Monte-Carlo-Simulation. Die Seite erklaert Nutzen, Funktionen,
+Datenspeicherung und Lizenzmodell fuer ein Werkzeug zur strukturierten
+Modellierung, Simulation und Auswertung von Risiken, Unsicherheiten und
+Szenarien.
 
 ## Stack
 
@@ -41,7 +45,7 @@ smart-risk-landingpage/
 
 Der CTA im Lizenzbereich ist vorbereitet und kann spaeter auf die konkrete
 Lemon-Squeezy-Checkout-URL umgestellt werden. Die Zahlungsabwicklung wird im
-Text als Stripe-basiert beschrieben.
+Text als Lemon-Squeezy- und Stripe-basiert beschrieben.
 
 ## Rechtliche Seiten
 
