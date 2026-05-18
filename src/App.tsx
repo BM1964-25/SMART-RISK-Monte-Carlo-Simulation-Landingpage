@@ -119,7 +119,7 @@ const faqs = [
   {
     question: "Wie funktioniert die Lizenz?",
     answer:
-      "Die App wird über eine kostenpflichtige Jahreslizenz lizenziert. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate.",
+      "Die App wird über eine kostenpflichtige Jahreslizenz für 599 Euro zzgl. 19% MwSt. lizenziert. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate.",
   },
   {
     question: "Kann ich Daten exportieren?",
@@ -129,7 +129,7 @@ const faqs = [
   {
     question: "Brauche ich ein Nutzerkonto?",
     answer:
-      "Für die lokale Arbeit ist kein SaaS-Konto vorgesehen. Kauf, Zahlung und Lizenzverwaltung laufen getrennt über Lemon Squeezy und Stripe.",
+      "Für die lokale Arbeit ist kein SaaS-Konto vorgesehen. Die Lizenz gilt für die lokale Nutzung der App.",
   },
   {
     question: "Für welche Anwendungsfälle eignet sich die App?",
@@ -316,15 +316,15 @@ function App() {
               Eine klare Jahreslizenz für die lokale Nutzung der App.
             </h2>
             <p className="mt-6 text-lg leading-8 text-graphite">
-              Der Checkout ist für Lemon Squeezy vorbereitet. Die
-              Zahlungsabwicklung erfolgt über Lemon Squeezy und Stripe.
+              Die Lizenz richtet sich an professionelle Anwender, die
+              Risikoanalysen lokal und nachvollziehbar durchführen möchten.
             </p>
           </div>
           <div className="rounded-lg border border-ink/10 bg-white p-6 shadow-panel sm:p-8">
             <div className="flex flex-col justify-between gap-5 border-b border-ink/10 pb-7 sm:flex-row sm:items-start">
               <div>
                 <h3 className="text-2xl font-semibold">Jahreslizenz</h3>
-                <p className="mt-2 text-graphite">12 Monate lokale Nutzung</p>
+                <p className="mt-2 text-graphite">599 Euro zzgl. 19% MwSt.</p>
               </div>
               <a
                 href={checkoutUrl}
@@ -336,11 +336,10 @@ function App() {
             </div>
             <ul className="mt-7 grid gap-4 text-graphite">
               {[
-                "Kostenpflichtige Jahreslizenz",
+                "Jahreslizenz für 599 Euro zzgl. 19% MwSt.",
                 "Laufzeit 12 Monate",
                 "Automatische Verlängerung um weitere 12 Monate",
                 "Kündigungsfrist: 1 Monat vor Ablauf",
-                "Zahlungsabwicklung über Lemon Squeezy / Stripe",
                 "Lizenz für lokale Nutzung der App",
               ].map((item) => (
                 <li className="flex gap-3" key={item}>

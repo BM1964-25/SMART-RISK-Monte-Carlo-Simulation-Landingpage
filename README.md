@@ -44,8 +44,8 @@ smart-risk-landingpage/
 ## Kauf-Integration
 
 Der CTA im Lizenzbereich ist vorbereitet und kann spaeter auf die konkrete
-Lemon-Squeezy-Checkout-URL umgestellt werden. Die Zahlungsabwicklung wird im
-Text als Lemon-Squeezy- und Stripe-basiert beschrieben.
+Kauf- oder Checkout-URL umgestellt werden. Der sichtbare Lizenztext nennt den
+Preis von 599 Euro zzgl. 19% MwSt. und vermeidet technische Zahlungsanbieter.
 
 ## Rechtliche Seiten
 
