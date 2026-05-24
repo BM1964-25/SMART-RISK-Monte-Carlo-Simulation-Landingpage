@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
-import simulationScreenshot from "./assets/smart-risk-simulation-section.png";
+import workspaceDashboard from "./assets/smart-risk-workspace-dashboard.png";
 import appIcon from "./assets/smart-risk-icon.jpeg";
 
 const appName = "SMART RISK Monte-Carlo-Simulation";
@@ -297,14 +297,7 @@ function App() {
       </section>
 
       <section id="workspace" className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
-            <img
-              src={simulationScreenshot}
-              alt="SMART RISK Simulation"
-              className="h-full w-full object-cover"
-            />
-          </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               Nutzung / Eigener Arbeitsbereich
@@ -351,6 +344,13 @@ function App() {
               App öffnen
               <ChevronRight size={18} aria-hidden="true" />
             </a>
+          </div>
+          <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
+            <img
+              src={workspaceDashboard}
+              alt="SMART RISK Dashboard mit Kennzahlen und Simulationsergebnissen"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </section>
