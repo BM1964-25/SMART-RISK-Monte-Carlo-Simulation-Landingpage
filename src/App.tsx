@@ -32,9 +32,9 @@ const preorderMail =
   "mailto:info@built-smart-hub.com?subject=Vorbestellung%20SMART%20RISK%20Monte-Carlo-Simulation";
 
 const benefits = [
-  "Risiken probabilistisch bewerten",
-  "Optionale KI-Assistenz nutzen",
-  "Lokal im Browser arbeiten",
+  "Risiken probabilistisch bewerten und Bandbreiten sichtbar machen.",
+  "Optionale KI-Assistenz für Formeln und Berichtstexte nutzen.",
+  "Lokal im Browser arbeiten und Projektdaten selbst verwalten.",
 ];
 
 const features = [
