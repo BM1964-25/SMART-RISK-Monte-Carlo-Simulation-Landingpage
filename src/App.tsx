@@ -33,7 +33,7 @@ const preorderMail =
 
 const benefits = [
   "Risiken probabilistisch bewerten",
-  "KI-Interpretation mit eigenem API-Key",
+  "Optionale KI-Assistenz nutzen",
   "Lokal im Browser arbeiten",
 ];
 
@@ -71,12 +71,22 @@ const features = [
 ];
 
 const aiFeatures = [
-  "KI-gestützte Ergebnisinterpretation",
-  "Management-Zusammenfassung und Bericht",
-  "Risiko-Treiber erklären lassen",
-  "Szenario-Empfehlungen ableiten",
-  "Maßnahmen zur Gegensteuerung vorschlagen",
-  "Projekt- und Risikodaten plausibilisieren",
+  {
+    title: "Formeln vorbereiten",
+    text: "Aus einer fachlichen Beschreibung einen prüfbaren Formelvorschlag mit erlaubten Formelbausteinen ableiten.",
+  },
+  {
+    title: "Risiken strukturieren",
+    text: "Typische Unsicherheiten, Risikotreiber und Maßnahmen für das aktuelle Projekt als Denkanstoß vorschlagen.",
+  },
+  {
+    title: "Ergebnisse erklären",
+    text: "Perzentile, Zielabweichungen, Sensitivitäten und Handlungsempfehlungen in verständliche Managementsprache übersetzen.",
+  },
+  {
+    title: "Szenarien schärfen",
+    text: "Optimistische, realistische und kritische Varianten mit nachvollziehbaren Annahmen vorbereiten.",
+  },
 ];
 
 const audiences = [
@@ -99,7 +109,7 @@ const faqs = [
   {
     question: "Brauche ich einen API-Key?",
     answer:
-      "Ja. Für die KI-Funktionen ist ein eigener API-Key erforderlich. Die Monte-Carlo-Grundfunktionen, Modellierung und Auswertung bleiben als browserbasierter Arbeitsbereich strukturiert nutzbar.",
+      "Nur für die optionale KI-Assistenz. Die Simulation, Modellierung und Auswertung bleiben fachlich und rechnerisch lokal im Browser nutzbar. Wenn du KI-Unterstützung für Formulierungen, Strukturierung oder Ergebnisinterpretation verwenden möchtest, ist ein eigener Anthropic API-Key erforderlich.",
   },
   {
     question: "Werden Projektdaten automatisch in einer Cloud gespeichert?",
@@ -196,7 +206,7 @@ function App() {
             </p>
             <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/88 backdrop-blur">
               <Sparkles size={16} aria-hidden="true" />
-              Probabilistische Analyse mit KI-gestützter Interpretation
+              Probabilistische Analyse mit optionaler KI-Assistenz
             </div>
             <h1 className="mt-7 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_12px_34px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
               {appName}
@@ -205,7 +215,7 @@ function App() {
               Kosten-, Termin-, CAPEX- und Projektrisiken systematisch
               modellieren, simulieren und als klare Managementaussage
               aufbereiten. Browserbasiert, lokal speichernd und mit
-              KI-Funktionen über eigenen API-Key.
+              optionaler KI-Unterstützung über eigenen API-Key.
             </p>
             <div className="mt-9 grid max-w-4xl gap-4 sm:grid-cols-2">
               <button
@@ -258,7 +268,7 @@ function App() {
               "Klassische Tabellen zeigen häufig nur Planwerte, aber nicht die Bandbreite möglicher Ergebnisse.",
               "Monte-Carlo-Simulationen machen Unsicherheit als Verteilung sichtbar und entscheidbar.",
               "P80, P90, Überschreitungswahrscheinlichkeiten und Sensitivitäten schaffen eine belastbare Managementsprache.",
-              "KI-Funktionen helfen, Ergebnisse, Treiber und Gegenmaßnahmen schneller zu erklären.",
+              "Optionale KI-Assistenz hilft, Ergebnisse, Treiber und Gegenmaßnahmen schneller zu formulieren und zu strukturieren.",
             ].map((item) => (
               <div
                 key={item}
@@ -356,30 +366,55 @@ function App() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-              KI-Funktionen
+              KI-Assistenz
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Interpretation und Plausibilisierung mit eigenem API-Key.
+              Optionale API-Unterstützung für Formeln, Risikoideen, Szenarien und Berichtstexte.
             </h2>
             <p className="mt-6 text-lg leading-8 text-graphite">
-              Die KI-Funktionen benötigen einen eigenen API-Key. Sie ergänzen
-              die Monte-Carlo-Methodik um verständliche Managementtexte,
-              Treibererklärungen und Vorschläge zur Gegensteuerung.
+              Die Simulation bleibt fachlich und rechnerisch lokal. Die
+              KI-Assistenz unterstützt dort, wo Formulierungen, Strukturierung
+              und Interpretation Zeit sparen. Für diese optionale Nutzung ist
+              ein eigener Anthropic API-Key erforderlich.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {aiFeatures.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-md border border-ink/10 bg-white p-4"
-              >
-                <BrainCircuit className="mt-0.5 h-5 w-5 flex-none text-gold" />
-                <span className="leading-7 text-graphite">{item}</span>
+          <div className="mt-10 rounded-md border border-ink/10 bg-white p-6 shadow-sm">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 className="text-xl font-semibold">
+                  Was die KI-Assistenz leistet
+                </h3>
+                <p className="mt-2 max-w-3xl text-base leading-7 text-graphite">
+                  Die Simulation bleibt fachlich und rechnerisch lokal. Die KI
+                  unterstützt dort, wo Formulierungen, Strukturierung und
+                  Interpretation Zeit sparen.
+                </p>
               </div>
-            ))}
+              <span className="inline-flex w-fit items-center rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-sm font-semibold text-graphite">
+                Optional
+              </span>
+            </div>
+            <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {aiFeatures.map(({ title, text }) => (
+              <div
+                key={title}
+                className="rounded-md border border-ink/10 bg-paper p-4"
+              >
+                <BrainCircuit className="h-5 w-5 text-gold" />
+                <h4 className="mt-3 font-semibold">{title}</h4>
+                <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
+              </div>
+              ))}
+            </div>
+            <p className="mt-5 rounded-md bg-[#e8f0fa] px-5 py-4 leading-7 text-ink">
+              Die KI bringt Mehrwert, wenn du schneller zu einem strukturierten
+              Entwurf, einer besseren Ergebnisinterpretation oder klareren
+              Berichtstexten kommen möchtest. Simulation, Plausibilisierung und
+              fachliche Freigabe bleiben weiterhin bewusst beim Nutzer.
+            </p>
           </div>
         </div>
       </section>
@@ -464,10 +499,10 @@ function App() {
             </div>
             <div className="mt-6 rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-4 text-center">
               <p className="text-sm font-extrabold uppercase text-[#9edbbf]">
-                KI-Nutzung
+                Optionale KI-Nutzung
               </p>
               <p className="mt-1 text-lg font-semibold text-white/90">
-                Eigener Anthropic API-Key erforderlich
+                Eigener Anthropic API-Key nur für KI-Assistenz erforderlich
               </p>
             </div>
             <button
