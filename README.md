@@ -1,10 +1,8 @@
 # SMART RISK Monte-Carlo-Simulation Landingpage
 
-Eigenstaendige Landingpage fuer die lokale Desktop-App SMART RISK
-Monte-Carlo-Simulation. Die Seite erklaert Nutzen, Funktionen,
-Datenspeicherung und Lizenzmodell fuer ein Werkzeug zur strukturierten
-Modellierung, Simulation und Auswertung von Risiken, Unsicherheiten und
-Szenarien.
+Eigenstaendige Landingpage fuer SMART RISK Monte-Carlo-Simulation. Die Seite
+erklaert Nutzen, Funktionen, KI-Modell, Datenspeicherung und Lizenzmodell fuer
+ein browserbasiertes Werkzeug zur probabilistischen Risiko- und Szenarioanalyse.
 
 ## Stack
 
@@ -27,6 +25,20 @@ npm run dev
 npm run build
 ```
 
+## Deployment
+
+Die Vite-Basis ist fuer GitHub Pages unter folgendem Pfad gesetzt:
+
+```text
+/SMART-RISK-Monte-Carlo-Simulation-Landingpage/
+```
+
+Ziel-URL:
+
+```text
+https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation-Landingpage/
+```
+
 ## Projektstruktur
 
 ```text
@@ -43,18 +55,5 @@ smart-risk-landingpage/
 
 ## Kauf-Integration
 
-Der CTA im Lizenzbereich ist vorbereitet und kann spaeter auf die konkrete
-Kauf- oder Checkout-URL umgestellt werden. Der sichtbare Lizenztext nennt den
-Preis von 599 Euro zzgl. 19% MwSt. und vermeidet technische Zahlungsanbieter.
-
-## Rechtliche Seiten
-
-Die Footer-Links verweisen aktuell auf Platzhalter-Routen:
-
-- `/impressum`
-- `/datenschutz`
-- `/agb`
-- `/widerruf`
-
-Diese Seiten sollten vor Veroeffentlichung mit finalen Rechtstexten erstellt
-oder auf bestehende externe Rechtstexte verlinkt werden.
+Die Kaufbuttons oeffnen aktuell ein Vorbestell-Hinweisfenster mit Mailto-Link.
+Der sichtbare Lizenztext nennt den Preis von 599 Euro zzgl. 19% MwSt.

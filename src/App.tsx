@@ -2,169 +2,156 @@ import {
   ArrowDown,
   BadgeCheck,
   BarChart3,
-  Boxes,
-  Calculator,
-  ChartNoAxesColumnIncreasing,
+  BrainCircuit,
   Check,
   ChevronRight,
-  CloudOff,
-  Database,
   FileJson,
   FileText,
   Gauge,
-  GitCompare,
   KeyRound,
   Laptop,
-  Lock,
-  Search,
+  LineChart,
+  LockKeyhole,
+  Mail,
+  Route,
   ShieldCheck,
   SlidersHorizontal,
+  Sparkles,
+  Target,
   TrendingUp,
+  X,
 } from "lucide-react";
+import { useState } from "react";
+import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
+import simulationScreenshot from "./assets/smart-risk-simulation-section.png";
+import appIcon from "./assets/smart-risk-icon.jpeg";
 
-const checkoutUrl = "#license";
+const appName = "SMART RISK Monte-Carlo-Simulation";
+const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
+const preorderMail =
+  "mailto:info@built-smart-hub.com?subject=Vorbestellung%20SMART%20RISK%20Monte-Carlo-Simulation";
+
+const benefits = [
+  "Risiken probabilistisch bewerten",
+  "KI-Interpretation mit eigenem API-Key",
+  "Lokal im Browser arbeiten",
+];
 
 const features = [
   {
-    icon: Calculator,
-    title: "Monte-Carlo-Simulationen durchführen",
-    text: "Unsichere Annahmen in belastbare Ergebnisräume übersetzen.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Risiken modellieren",
-    text: "Risiken, Unsicherheiten und Eintrittswahrscheinlichkeiten strukturiert erfassen.",
-  },
-  {
     icon: SlidersHorizontal,
-    title: "Verteilungen definieren",
-    text: "Eingangsgrößen mit passenden Wahrscheinlichkeitsverteilungen beschreiben.",
-  },
-  {
-    icon: GitCompare,
-    title: "Szenarien vergleichen",
-    text: "Varianten, Annahmen und Risikoprofile nachvollziehbar gegenüberstellen.",
+    title: "Unsicherheiten modellieren",
+    text: "Bandbreitenparameter, Ereignisbausteine und Verteilungen wie Dreieck, Gleichverteilung, Normalverteilung und Beta-PERT strukturieren.",
   },
   {
     icon: Gauge,
-    title: "Kennzahlen anzeigen",
-    text: "Ergebniswerte, Bandbreiten und Risikokennzahlen klar auswerten.",
+    title: "Monte-Carlo-Simulation durchführen",
+    text: "1.000 bis 50.000 Läufe simulieren und Ergebnisräume mit P10, P50, P80, P90 und P95 belastbar sichtbar machen.",
   },
   {
     icon: BarChart3,
-    title: "Histogramme visualisieren",
-    text: "Verteilungen, Häufigkeiten und Ergebnisstreuung schnell erfassen.",
+    title: "Ergebnisse analysieren",
+    text: "Histogramm, kumulative Verteilung, Budgetüberschreitungswahrscheinlichkeit und Risikopuffer-Empfehlung auswerten.",
   },
   {
     icon: TrendingUp,
-    title: "Sensitivitäten auswerten",
-    text: "Erkennen, welche Faktoren das Ergebnis besonders stark beeinflussen.",
+    title: "Sensitivität erkennen",
+    text: "Treiber-Rangliste und Tornado-Diagramm zeigen, welche Eingangsgrößen das Ergebnis besonders stark beeinflussen.",
+  },
+  {
+    icon: Route,
+    title: "Szenarien vergleichen",
+    text: "Basisszenario, optimistische Varianten, kritische Annahmen und eigene Szenarien für Managemententscheidungen gegenüberstellen.",
   },
   {
     icon: FileText,
     title: "Berichte vorbereiten",
-    text: "Analysen und Ergebnisse für Abstimmungen und Entscheidungen aufbereiten.",
-  },
-  {
-    icon: Database,
-    title: "Projektstammdaten verwalten",
-    text: "Projektkontext, Annahmen und Simulationsdaten geordnet halten.",
-  },
-  {
-    icon: FileJson,
-    title: "JSON Export / Import",
-    text: "Daten sichern, übertragen oder für spätere Analysen wieder laden.",
-  },
-  {
-    icon: Boxes,
-    title: "Demo-Daten laden",
-    text: "Mit Beispielmodellen schneller in Struktur und Auswertung einsteigen.",
-  },
-  {
-    icon: ChartNoAxesColumnIncreasing,
-    title: "Strukturierte Ergebnisanalyse",
-    text: "Simulationsergebnisse verständlich prüfen, erklären und dokumentieren.",
+    text: "Automatisch generierte Management-Zusammenfassungen mit Kennzahlen, Interpretation und Copy-Funktion nutzen.",
   },
 ];
 
+const aiFeatures = [
+  "KI-gestützte Ergebnisinterpretation",
+  "Management-Zusammenfassung und Bericht",
+  "Risiko-Treiber erklären lassen",
+  "Szenario-Empfehlungen ableiten",
+  "Maßnahmen zur Gegensteuerung vorschlagen",
+  "Projekt- und Risikodaten plausibilisieren",
+];
+
 const audiences = [
-  "Projektmanager",
+  "Projektverantwortliche",
+  "Bauherren und Investoren",
+  "Projektsteuerer",
   "Bau- und Immobilienprofis",
   "Risikomanager",
-  "Controller",
-  "Consultants",
-  "Projektsteuerer",
-  "Investoren",
-  "Selbstständige",
-  "kleine Teams ohne Cloud-Zwang",
-  "Menschen, die Risiken nachvollziehbar simulieren und erklären möchten",
+  "Controller und Consultants",
+  "Entscheider mit Kosten-, Termin- oder CAPEX-Risiken",
+  "Teams, die nachvollziehbare Managementaussagen brauchen",
 ];
 
 const faqs = [
   {
-    question: "Läuft die App lokal?",
+    question: "Ist die App browserbasiert?",
     answer:
-      "Ja. SMART RISK Monte-Carlo-Simulation ist als lokale Desktop-App konzipiert und läuft direkt auf dem Rechner.",
+      "Ja. SMART RISK wird über einen Link im Webbrowser geöffnet. Eine separate Desktop-Installation ist nicht erforderlich.",
   },
   {
-    question: "Werden Daten in der Cloud gespeichert?",
+    question: "Brauche ich einen API-Key?",
     answer:
-      "Nein. Die App ist auf lokale Nutzung ausgelegt. Vertrauliche Projekt- und Risikodaten bleiben beim Anwender.",
+      "Ja. Für die KI-Funktionen ist ein eigener API-Key erforderlich. Die Monte-Carlo-Grundfunktionen, Modellierung und Auswertung bleiben als browserbasierter Arbeitsbereich strukturiert nutzbar.",
   },
   {
-    question: "Gibt es eine Windows-Version?",
+    question: "Werden Projektdaten automatisch in einer Cloud gespeichert?",
     answer:
-      "Die Landingpage ist so vorbereitet, dass eine Windows-Version ausgewiesen werden kann, sobald das Installationspaket bereitsteht.",
+      "Nein. Inhalte werden lokal im Browser gespeichert. Andere Nutzer haben keinen Zugriff auf lokale Projektdaten.",
   },
   {
-    question: "Wie funktioniert die Lizenz?",
+    question: "Welche Daten kann ich exportieren?",
     answer:
-      "Die App wird über eine kostenpflichtige Jahreslizenz für 599 Euro zzgl. 19% MwSt. lizenziert. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate.",
+      "Die App unterstützt JSON-Import und JSON-Export für Projektdaten sowie CSV-Export der Simulationsergebnisse. Zusätzlich gibt es Datenvorlagen und CSV-Importe für Parameter und Risiken.",
   },
   {
-    question: "Kann ich Daten exportieren?",
+    question: "Was kostet die Lizenz?",
     answer:
-      "Ja. Über JSON Export und Import können Projektdaten gesichert, übertragen und wieder eingelesen werden.",
+      "Die Jahreslizenz kostet 599 Euro zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
   },
   {
-    question: "Brauche ich ein Nutzerkonto?",
+    question: "Gibt es eine Testphase?",
     answer:
-      "Für die lokale Arbeit ist kein SaaS-Konto vorgesehen. Die Lizenz gilt für die lokale Nutzung der App.",
+      "Ja. Es ist eine 7 Tage kostenlose Testphase vorgesehen. Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern.",
   },
   {
-    question: "Für welche Anwendungsfälle eignet sich die App?",
+    question: "Ersetzt die Simulation eine Fachprüfung?",
     answer:
-      "Für Projekt-, Kosten-, Termin-, Investitions- und Entscheidungsrisiken, bei denen Unsicherheiten quantitativ sichtbar gemacht werden sollen.",
+      "Nein. Die Ergebnisse sind eine Management- und Entscheidungshilfe. Fachliche, technische und vertragliche Plausibilisierung bleibt erforderlich.",
   },
   {
-    question: "Kann ich eigene Szenarien anlegen?",
+    question: "Gibt es gemeinsame Cloud-Arbeitsbereiche?",
     answer:
-      "Ja. Eigene Szenarien, Annahmen und Modellvarianten können angelegt und miteinander verglichen werden.",
-  },
-  {
-    question: "Ist die App ein SaaS-Produkt?",
-    answer:
-      "Nein. SMART RISK ist bewusst kein komplexes SaaS-System, sondern eine schlanke lokale Desktop-App.",
+      "In dieser Version nicht. Der Fokus liegt auf einem persönlichen, browserbasierten Arbeitsbereich mit lokal gespeicherten Inhalten.",
   },
 ];
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="bg-paper text-ink">
-      <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/88 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#hero" className="flex items-center gap-3 font-semibold">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-ink text-paper">
-              SR
+      <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/92 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+          <a href="#hero" className="flex min-w-0 items-center gap-3">
+            <img src={appIcon} alt="" className="h-10 w-10 rounded-lg" />
+            <span className="truncate font-serif text-xl font-semibold">
+              SMART RISK
             </span>
-            <span>SMART RISK</span>
           </a>
-          <div className="hidden items-center gap-7 text-sm text-graphite md:flex">
+          <div className="hidden items-center gap-7 text-sm font-medium text-graphite md:flex">
             <a className="hover:text-ink" href="#features">
               Funktionen
             </a>
-            <a className="hover:text-ink" href="#local">
-              Lokal
+            <a className="hover:text-ink" href="#workspace">
+              Konto
             </a>
             <a className="hover:text-ink" href="#license">
               Lizenz
@@ -173,75 +160,97 @@ function App() {
               FAQ
             </a>
           </div>
-          <a
-            href="#license"
-            className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-paper shadow-sm transition hover:bg-graphite"
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="inline-flex items-center gap-2 rounded-md bg-[#130d09] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink"
           >
             Lizenz sichern
             <ChevronRight size={16} aria-hidden="true" />
-          </a>
+          </button>
         </nav>
       </header>
 
-      <section id="hero" className="subtle-grid overflow-hidden">
-        <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-sm text-graphite shadow-sm">
-              <Lock size={15} aria-hidden="true" />
-              Lokale Desktop-App für quantitative Risikoanalyse
+      <section
+        id="hero"
+        className="relative min-h-[calc(100vh-73px)] overflow-hidden bg-ink"
+      >
+        <img
+          src={heroScreenshot}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-left-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090f]/96 via-[#101522]/88 to-[#101522]/62" />
+        <div className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-5 py-16 sm:px-8 lg:py-20">
+          <div className="max-w-3xl text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
+              Decision Support Tool für Risiko- und Szenarioanalyse
+            </p>
+            <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/88 backdrop-blur">
+              <Sparkles size={16} aria-hidden="true" />
+              Probabilistische Analyse mit KI-gestützter Interpretation
             </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-normal text-ink sm:text-6xl lg:text-7xl">
-              SMART RISK Monte-Carlo-Simulation
+            <h1 className="mt-7 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_10px_28px_rgba(0,0,0,0.42)] sm:text-6xl lg:text-7xl">
+              {appName}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-graphite sm:text-xl">
-              Risiken, Unsicherheiten und Szenarien systematisch modellieren,
-              simulieren und verständlich auswerten. Lokal, schnell und
-              konzentriert auf belastbare Entscheidungen.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
+              Kosten-, Termin-, CAPEX- und Projektrisiken systematisch
+              modellieren, simulieren und als klare Managementaussage
+              aufbereiten. Browserbasiert, lokal speichernd und mit
+              KI-Funktionen über eigenen API-Key.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#license"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-base font-semibold text-paper shadow-panel transition hover:-translate-y-0.5 hover:bg-graphite"
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-3 text-base font-bold text-ink shadow-panel transition hover:-translate-y-0.5 hover:bg-[#c9a75f]"
               >
-                Jetzt kaufen / Lizenz sichern
+                Jetzt kaufen
                 <KeyRound size={18} aria-hidden="true" />
-              </a>
+              </button>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-ink/15 bg-white/70 px-6 py-3 text-base font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/16"
               >
                 Funktionen ansehen
                 <ArrowDown size={18} aria-hidden="true" />
               </a>
             </div>
+            <div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+              {benefits.map((benefit) => (
+                <div
+                  key={benefit}
+                  className="rounded-md border border-white/15 bg-white/10 p-4 text-sm font-medium leading-6 text-white/86 backdrop-blur"
+                >
+                  {benefit}
+                </div>
+              ))}
+            </div>
           </div>
-          <ProductMockup />
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 lg:grid-cols-[0.82fr_1.18fr]">
+      <section className="border-y border-ink/10 bg-ivory">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.84fr_1.16fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               Problem und Nutzen
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
-              Risiken werden besser verstanden, wenn sie nicht nur beschrieben,
-              sondern simuliert werden.
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Risiken brauchen mehr als Einzelwerte und Bauchgefühl.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Bauchgefühl reicht selten aus, um Projekt-, Kosten- oder Terminrisiken realistisch zu beurteilen.",
-              "Klassische Tabellen zeigen oft nur Einzelwerte, aber nicht die Bandbreite möglicher Ergebnisse.",
-              "Monte-Carlo-Simulationen machen Unsicherheit sichtbar und helfen, Entscheidungen nachvollziehbar zu begründen.",
-              "SMART RISK bündelt Modellierung, Simulation und Analyse in einem ruhigen lokalen Werkzeug.",
+              "Klassische Tabellen zeigen häufig nur Planwerte, aber nicht die Bandbreite möglicher Ergebnisse.",
+              "Monte-Carlo-Simulationen machen Unsicherheit als Verteilung sichtbar und entscheidbar.",
+              "P80, P90, Überschreitungswahrscheinlichkeiten und Sensitivitäten schaffen eine belastbare Managementsprache.",
+              "KI-Funktionen helfen, Ergebnisse, Treiber und Gegenmaßnahmen schneller zu erklären.",
             ].map((item) => (
               <div
-                className="rounded-lg border border-ink/10 bg-paper p-5 text-graphite"
                 key={item}
+                className="rounded-md border border-ink/10 bg-white p-6 text-base leading-7 text-graphite shadow-sm"
               >
-                <Check className="mb-4 text-moss" size={21} aria-hidden="true" />
                 {item}
               </div>
             ))}
@@ -249,302 +258,315 @@ function App() {
         </div>
       </section>
 
-      <section id="features" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-            Funktionen
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
-            Vom Risikomodell bis zur verständlichen Ergebnisanalyse.
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <article
-              className="rounded-lg border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-panel"
-              key={feature.title}
-            >
-              <feature.icon className="text-ocean" size={24} aria-hidden="true" />
-              <h3 className="mt-5 text-lg font-semibold">{feature.title}</h3>
-              <p className="mt-3 leading-7 text-graphite">{feature.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="local" className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-mist">
-              Lokale Datenspeicherung
+      <section id="features" className="bg-paper">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              Funktionen
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
-              Für vertrauliche Projekt- und Risikodaten bewusst lokal gedacht.
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Vom Risikomodell bis zur Entscheidungsvorlage.
             </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-paper/72">
-              SMART RISK läuft auf dem Rechner des Anwenders. Es gibt keine
-              Cloud-Pflicht, keine Teamfunktionen und kein komplexes
-              SaaS-System. Die Daten bleiben dort, wo sie hingehören.
-            </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { icon: Laptop, label: "Läuft lokal auf dem Rechner" },
-              { icon: CloudOff, label: "Keine Cloud-Pflicht" },
-              { icon: Database, label: "Daten bleiben beim Anwender" },
-              { icon: Lock, label: "Geeignet für vertrauliche Risikodaten" },
-            ].map((item) => (
-              <div
-                className="rounded-lg border border-white/12 bg-white/7 p-6 glass-line"
-                key={item.label}
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {features.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-panel"
               >
-                <item.icon className="text-mist" size={26} aria-hidden="true" />
-                <p className="mt-5 text-lg font-semibold">{item.label}</p>
-              </div>
+                <Icon className="h-8 w-8 text-gold" aria-hidden="true" />
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                <p className="mt-3 leading-7 text-graphite">{text}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="license" className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <section id="workspace" className="border-y border-ink/10 bg-ivory">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
+            <img
+              src={simulationScreenshot}
+              alt="SMART RISK Simulation"
+              className="h-full w-full object-cover"
+            />
+          </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-              Lizenzmodell
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              Nutzung / Eigener Arbeitsbereich
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
-              Eine klare Jahreslizenz für die lokale Nutzung der App.
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Browserbasiert, lokal speichernd und projektorientiert.
+            </h2>
+            <div className="mt-8 grid gap-4">
+              {[
+                {
+                  icon: Laptop,
+                  title: "Direkt im Webbrowser öffnen",
+                  text: "Die App läuft über einen Link im Browser. Eine separate Desktop-Installation ist nicht erforderlich.",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Lokale Inhalte",
+                  text: "Projektdaten, Modelle und Simulationseinstellungen werden lokal im Browser gespeichert und nicht automatisch in einer Cloud-Datenbank geteilt.",
+                },
+                {
+                  icon: FileJson,
+                  title: "Export und Import",
+                  text: "JSON-Import und JSON-Export sichern Projektdaten; CSV-Exporte und Vorlagen unterstützen Auswertung und Datenmanagement.",
+                },
+                {
+                  icon: LockKeyhole,
+                  title: "Konto und Lizenz",
+                  text: "Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern. Gemeinsame Cloud-Arbeitsbereiche sind nicht vorgesehen.",
+                },
+              ].map(({ icon: Icon, title, text }) => (
+                <div key={title} className="flex gap-4 rounded-md bg-white p-5">
+                  <Icon className="mt-1 h-6 w-6 flex-none text-sage" />
+                  <div>
+                    <h3 className="font-semibold">{title}</h3>
+                    <p className="mt-1 leading-7 text-graphite">{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a
+              href={appUrl}
+              className="mt-7 inline-flex items-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink transition hover:bg-paper"
+            >
+              App öffnen
+              <ChevronRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              KI-Funktionen
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Interpretation und Plausibilisierung mit eigenem API-Key.
             </h2>
             <p className="mt-6 text-lg leading-8 text-graphite">
-              Die Lizenz richtet sich an professionelle Anwender, die
-              Risikoanalysen lokal und nachvollziehbar durchführen möchten.
+              Die KI-Funktionen benötigen einen eigenen API-Key. Sie ergänzen
+              die Monte-Carlo-Methodik um verständliche Managementtexte,
+              Treibererklärungen und Vorschläge zur Gegensteuerung.
             </p>
           </div>
-          <div className="rounded-lg border border-ink/10 bg-white p-6 shadow-panel sm:p-8">
-            <div className="flex flex-col justify-between gap-5 border-b border-ink/10 pb-7 sm:flex-row sm:items-start">
-              <div>
-                <h3 className="text-2xl font-semibold">Jahreslizenz</h3>
-                <p className="mt-2 text-graphite">599 Euro zzgl. 19% MwSt.</p>
-              </div>
-              <a
-                href={checkoutUrl}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-5 py-3 font-semibold text-paper transition hover:bg-graphite"
-              >
-                Lizenz sichern
-                <BadgeCheck size={18} aria-hidden="true" />
-              </a>
-            </div>
-            <ul className="mt-7 grid gap-4 text-graphite">
-              {[
-                "Jahreslizenz für 599 Euro zzgl. 19% MwSt.",
-                "Laufzeit 12 Monate",
-                "Automatische Verlängerung um weitere 12 Monate",
-                "Kündigungsfrist: 1 Monat vor Ablauf",
-                "Lizenz für lokale Nutzung der App",
-              ].map((item) => (
-                <li className="flex gap-3" key={item}>
-                  <Check className="mt-0.5 shrink-0 text-moss" size={20} aria-hidden="true" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-ink/10 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-              Zielgruppe
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
-              Für Menschen, die Risiken nachvollziehbar simulieren und erklären
-              müssen.
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {audiences.map((audience) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {aiFeatures.map((item) => (
               <div
-                className="flex items-center gap-3 rounded-lg border border-ink/10 bg-paper px-5 py-4 font-medium"
-                key={audience}
+                key={item}
+                className="flex items-start gap-3 rounded-md border border-ink/10 bg-white p-4"
               >
-                <Search className="text-ocean" size={19} aria-hidden="true" />
-                {audience}
+                <BrainCircuit className="mt-0.5 h-5 w-5 flex-none text-gold" />
+                <span className="leading-7 text-graphite">{item}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="faq" className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-            FAQ
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">
-            Kurze Antworten vor dem Kauf.
-          </h2>
-        </div>
-        <div className="mt-12 divide-y divide-ink/10 rounded-lg border border-ink/10 bg-white">
-          {faqs.map((faq) => (
-            <details className="group p-6" key={faq.question}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold">
-                {faq.question}
-                <ChevronRight
-                  className="shrink-0 transition group-open:rotate-90"
-                  size={20}
-                  aria-hidden="true"
-                />
-              </summary>
-              <p className="mt-4 max-w-3xl leading-7 text-graphite">{faq.answer}</p>
-            </details>
-          ))}
+      <section id="license" className="border-y border-ink/10 bg-ivory">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              Lizenzmodell
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Jahreslizenz für professionelle Risikoentscheidungen.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-graphite">
+              Der Checkout ist in Vorbereitung. Bis zur Aktivierung kannst du
+              eine Vorbestellung vormerken lassen.
+            </p>
+          </div>
+          <div className="rounded-md border border-ink/10 bg-white p-8 shadow-panel">
+            <div className="flex flex-wrap items-end justify-between gap-5">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+                  SMART RISK Jahreslizenz
+                </p>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="font-serif text-5xl font-semibold">
+                    599 Euro
+                  </span>
+                  <span className="text-graphite">/ Jahr</span>
+                </div>
+                <p className="mt-2 text-sm text-graphite">zzgl. 19 % MwSt.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-ink px-6 py-3 font-semibold text-white transition hover:bg-[#130d09]"
+              >
+                Lizenz sichern
+                <ChevronRight size={18} aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {[
+                "Laufzeit 12 Monate",
+                "7 Tage kostenlose Testphase",
+                "Automatische Verlängerung um 12 Monate",
+                "Kündigungsfrist 1 Monat vor Ablauf",
+                "Sichere Online-Zahlung in Vorbereitung",
+                "Pro Lizenz ein Nutzerzugriff",
+                "Mehrere Lizenzen derselben App möglich",
+                "Gemeinsamer Checkout mehrerer Apps später vorgesehen",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 text-graphite">
+                  <Check className="mt-1 h-4 w-4 flex-none text-sage" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-ink/10 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-10 text-sm text-graphite sm:px-8 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 SMART RISK Monte-Carlo-Simulation</p>
-          <div className="flex flex-wrap gap-5">
-            <a className="hover:text-ink" href="/impressum">
-              Impressum
-            </a>
-            <a className="hover:text-ink" href="/datenschutz">
-              Datenschutz
-            </a>
-            <a className="hover:text-ink" href="/agb">
-              AGB
-            </a>
-            <a className="hover:text-ink" href="/widerruf">
-              Widerrufsbelehrung
-            </a>
+      <section className="bg-paper">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+            Zielgruppe
+          </p>
+          <h2 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+            Für Projekte, bei denen Unsicherheit entscheidungsrelevant ist.
+          </h2>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {audiences.map((item) => (
+              <div
+                key={item}
+                className="rounded-md border border-ink/10 bg-white p-5 text-graphite"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="border-t border-ink/10 bg-ivory">
+        <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+            FAQ
+          </p>
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+            Häufige Fragen
+          </h2>
+          <div className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
+            {faqs.map(({ question, answer }) => (
+              <details key={question} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-semibold">
+                  {question}
+                  <ChevronRight className="h-5 w-5 flex-none transition group-open:rotate-90" />
+                </summary>
+                <p className="mt-4 max-w-3xl leading-8 text-graphite">
+                  {answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-ink/10 bg-ivory">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
+          <div className="mx-auto flex max-w-md flex-col items-center gap-4 lg:mx-0 lg:items-start">
+            <div className="flex items-center gap-3">
+              <img src={appIcon} alt="" className="h-10 w-10 rounded-lg" />
+              <span className="font-serif text-2xl font-semibold">
+                {appName}
+              </span>
+            </div>
+            <p className="leading-7 text-graphite">
+              Probabilistische Risiko- und Szenarioanalyse für belastbare
+              Projektentscheidungen.
+            </p>
+          </div>
+          <div className="text-sm text-graphite">
+            <p className="font-medium text-ink">
+              © 2026 SmartBuilt-AI · powered by BuiltSmart Hub - Bernhard
+              Metzger
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-end">
+              <a href="https://www.built-smart-hub.com/impressum">Impressum</a>
+              <a href="https://www.built-smart-hub.com/datenschutz">
+                Datenschutz
+              </a>
+              <a href="https://www.built-smart-hub.com/agb">AGB</a>
+              <a href="https://www.built-smart-hub.com/widerrufsbelehrung">
+                Widerrufsbelehrung
+              </a>
+            </div>
           </div>
         </div>
       </footer>
+
+      {isModalOpen ? <PreorderModal onClose={() => setIsModalOpen(false)} /> : null}
     </main>
   );
 }
 
-function ProductMockup() {
+function PreorderModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="relative mx-auto w-full max-w-3xl">
-      <div className="rounded-[20px] border border-ink/10 bg-ink p-2 shadow-panel">
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f8f6f1]">
-          <div className="flex items-center justify-between border-b border-ink/10 bg-white px-4 py-3">
-            <div className="flex gap-2">
-              <span className="h-3 w-3 rounded-full bg-[#d96a56]" />
-              <span className="h-3 w-3 rounded-full bg-[#d6aa43]" />
-              <span className="h-3 w-3 rounded-full bg-[#5e9d73]" />
-            </div>
-            <div className="rounded-md border border-ink/10 bg-paper px-3 py-1 text-xs text-graphite">
-              Risikoanalyse lokal
-            </div>
+    <div
+      className="fixed inset-0 z-[80] grid place-items-center bg-ink/70 px-5 py-8 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="preorder-title"
+    >
+      <div className="w-full max-w-lg rounded-md bg-ivory p-7 shadow-panel">
+        <div className="flex items-start justify-between gap-5">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              Kaufbereich
+            </p>
+            <h2
+              id="preorder-title"
+              className="mt-2 font-serif text-3xl font-semibold"
+            >
+              {appName} ist in Vorbereitung.
+            </h2>
           </div>
-          <div className="grid min-h-[470px] grid-cols-[145px_1fr] sm:grid-cols-[190px_1fr]">
-            <aside className="border-r border-ink/10 bg-[#ebe4d9] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-graphite">
-                Projekte
-              </p>
-              <div className="mt-5 space-y-2">
-                {["Kosten", "Termine", "Szenarien", "Berichte"].map((item, index) => (
-                  <div
-                    className={`rounded-md px-3 py-2 text-sm ${
-                      index === 0 ? "bg-ink text-paper" : "text-graphite"
-                    }`}
-                    key={item}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 rounded-lg border border-ink/10 bg-white/55 p-3">
-                <p className="text-xs font-semibold text-graphite">Simulation</p>
-                <div className="mt-3 h-2 rounded-full bg-moss" />
-                <div className="mt-2 h-2 w-2/3 rounded-full bg-ocean" />
-              </div>
-            </aside>
-            <div className="p-5 sm:p-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">
-                    Szenario
-                  </p>
-                  <h3 className="mt-1 text-xl font-semibold">Baukosten 2026</h3>
-                </div>
-                <div className="rounded-md border border-ink/10 bg-white px-3 py-2 text-xs text-graphite">
-                  P90: 4,82 Mio. €
-                </div>
-              </div>
-              <div className="mt-6 grid gap-4 sm:grid-cols-[1.15fr_0.85fr]">
-                <div className="rounded-lg border border-ink/10 bg-white p-4 shadow-sm">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="text-sm font-semibold">Ergebnisverteilung</span>
-                    <span className="rounded-md bg-mist px-2 py-1 text-xs text-graphite">
-                      10.000 Läufe
-                    </span>
-                  </div>
-                  <div className="flex h-32 items-end gap-1.5">
-                    {[22, 34, 48, 67, 86, 104, 91, 72, 54, 39, 25, 17].map(
-                      (height, index) => (
-                        <span
-                          className="flex-1 rounded-t-sm bg-ocean"
-                          style={{ height }}
-                          key={`${height}-${index}`}
-                        />
-                      ),
-                    )}
-                  </div>
-                </div>
-                <div className="rounded-lg border border-ink/10 bg-white p-4">
-                  <p className="text-sm font-semibold">Kennzahlen</p>
-                  <div className="mt-4 space-y-3 text-sm text-graphite">
-                    <Metric label="P50" value="4,31 Mio. €" />
-                    <Metric label="P80" value="4,66 Mio. €" />
-                    <Metric label="P95" value="5,08 Mio. €" />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-ink/10 bg-white p-4">
-                  <p className="text-sm font-semibold">Sensitivität</p>
-                  <div className="mt-4 space-y-2">
-                    <div className="h-2 rounded-full bg-ink/75" />
-                    <div className="h-2 w-4/5 rounded-full bg-ocean" />
-                    <div className="h-2 w-3/5 rounded-full bg-copper" />
-                  </div>
-                </div>
-                <div className="rounded-lg border border-ink/10 bg-white p-4">
-                  <p className="text-sm font-semibold">Export</p>
-                  <div className="mt-4 rounded-md bg-ink px-3 py-2 font-mono text-xs text-paper">
-                    risikoanalyse.json
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 rounded-lg border border-ink/10 bg-[#111418] p-4 font-mono text-xs leading-6 text-[#dce8d8]">
-                <span className="text-[#9ab7c1]">model</span> = {"{"}
-                <br />
-                &nbsp;&nbsp;scenario: "base-case",
-                <br />
-                &nbsp;&nbsp;runs: 10000,
-                <br />
-                &nbsp;&nbsp;storage: "local"
-                <br />
-                {"}"}
-              </div>
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="grid h-9 w-9 place-items-center rounded-md border border-ink/10 bg-white text-ink"
+            aria-label="Schließen"
+          >
+            <X size={18} aria-hidden="true" />
+          </button>
+        </div>
+        <p className="mt-5 leading-8 text-graphite">
+          Der Kaufbereich wird derzeit vorbereitet. Bei Interesse kannst du eine
+          Vorbestellung vormerken lassen.
+        </p>
+        <p className="mt-4 leading-8 text-graphite">
+          Sobald Trial, Zahlung und Lizenzfreischaltung aktiv sind, führt der
+          Kaufbutton direkt zur sicheren Online-Bestellung.
+        </p>
+        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={preorderMail}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-ink px-5 py-3 font-semibold text-white transition hover:bg-[#130d09]"
+          >
+            <Mail size={18} aria-hidden="true" />
+            Vorbestellung anfragen
+          </a>
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex items-center justify-center rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink"
+          >
+            Schließen
+          </button>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Metric({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between gap-3">
-      <span>{label}</span>
-      <span className="font-semibold text-ink">{value}</span>
     </div>
   );
 }

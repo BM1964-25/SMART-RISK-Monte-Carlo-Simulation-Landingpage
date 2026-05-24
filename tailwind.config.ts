@@ -5,16 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#131417",
-        graphite: "#2f343b",
-        paper: "#f7f5f1",
-        mist: "#e8e2d9",
-        copper: "#b66a43",
-        moss: "#607466",
-        ocean: "#3f6673",
+        ink: "#172338",
+        graphite: "#554f49",
+        paper: "#f7f4ee",
+        mist: "#e4dbcf",
+        gold: "#b8924a",
+        sage: "#526f60",
+        clay: "#8b5f48",
+        ivory: "#fffdf9",
       },
       boxShadow: {
-        panel: "0 24px 70px rgba(19, 20, 23, 0.14)",
+        panel: "0 24px 70px rgba(23, 35, 56, 0.16)",
       },
     },
   },
