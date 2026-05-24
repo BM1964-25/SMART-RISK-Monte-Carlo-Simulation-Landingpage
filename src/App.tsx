@@ -114,7 +114,7 @@ const faqs = [
   {
     question: "Was kostet die Lizenz?",
     answer:
-      "Die Jahreslizenz kostet 199 Euro pro Jahr zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
+      "Die Jahreslizenz kostet 599 Euro pro Jahr zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
   },
   {
     question: "Gibt es eine Testphase?",
@@ -419,16 +419,16 @@ function App() {
             <div className="mt-8">
               <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
                 <span className="text-8xl font-extrabold leading-none tracking-normal text-white">
-                  199 €
+                  599 €
                 </span>
                 <span className="pb-4 text-lg font-extrabold text-white/88">
                   pro Jahr zzgl. 19% MwSt.
                 </span>
               </div>
               <p className="mt-4 text-base font-bold leading-7 text-white/78">
-                236,81 € inkl. MwSt.
+                712,81 € inkl. MwSt.
                 <br />
-                Entspricht 16,58 € netto / 19,73 € brutto pro Monat
+                Entspricht 49,92 € netto / 59,40 € brutto pro Monat
               </p>
             </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
