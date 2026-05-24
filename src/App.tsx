@@ -484,16 +484,15 @@ function App() {
 
       <footer className="border-t border-ink/10 bg-ivory">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
-          <div className="mx-auto flex max-w-md flex-col items-center gap-4 lg:mx-0 lg:items-start">
+          <div className="mx-auto flex max-w-none flex-col items-center gap-4 lg:mx-0 lg:items-start">
             <div className="flex items-center gap-3">
               <img src={appIcon} alt="" className="h-10 w-10 rounded-lg" />
-              <span className="font-serif text-2xl font-semibold">
+              <span className="whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl">
                 {appName}
               </span>
             </div>
-            <p className="leading-7 text-graphite">
-              Probabilistische Risiko- und Szenarioanalyse für belastbare
-              Projektentscheidungen.
+            <p className="whitespace-nowrap text-sm leading-7 text-graphite sm:text-base">
+              Probabilistische Risiko- und Szenarioanalyse für belastbare Projektentscheidungen.
             </p>
           </div>
           <div className="text-sm text-graphite">
