@@ -467,16 +467,19 @@ function App() {
               </p>
             </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              {["12 Monate Laufzeit", "3 Tage testen", "1 Nutzerzugriff"].map(
-                (item) => (
+              {[
+                ["12 Monate", "Laufzeit"],
+                ["3 Tage", "testen"],
+                ["1", "Nutzerzugriff"],
+              ].map(([lineOne, lineTwo]) => (
                   <div
-                    key={item}
-                    className="flex min-h-9 items-center justify-center rounded-full border border-white/18 bg-white/12 px-4 py-1.5 text-center text-base font-extrabold leading-5 text-white/88"
+                    key={`${lineOne}-${lineTwo}`}
+                    className="flex min-h-[54px] flex-col items-center justify-center rounded-full border border-white/18 bg-white/12 px-4 py-2 text-center text-base font-extrabold leading-5 text-white/88"
                   >
-                    {item}
+                    <span>{lineOne}</span>
+                    <span>{lineTwo}</span>
                   </div>
-                ),
-              )}
+              ))}
             </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {[
