@@ -185,7 +185,7 @@ function App() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(2,3,8,0.99) 0%, rgba(2,3,8,0.98) 24%, rgba(8,12,22,0.9) 48%, rgba(12,18,30,0.58) 100%)",
+              "linear-gradient(90deg, rgba(2,3,8,0.99) 0%, rgba(2,3,8,0.98) 24%, rgba(8,12,22,0.82) 48%, rgba(12,18,30,0.34) 100%)",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/42 via-transparent to-[#05070c]/30" />
