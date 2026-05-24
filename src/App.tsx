@@ -207,29 +207,34 @@ function App() {
               aufbereiten. Browserbasiert, lokal speichernd und mit
               KI-Funktionen über eigenen API-Key.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 grid max-w-4xl gap-4 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-3 text-base font-bold text-ink shadow-panel transition hover:-translate-y-0.5 hover:bg-[#c9a75f]"
+                className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-bold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.32)] transition hover:-translate-y-0.5 hover:bg-white/92"
               >
                 Jetzt kaufen
-                <KeyRound size={18} aria-hidden="true" />
+                <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
               </button>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/16"
+                className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl border border-white/38 bg-white/14 px-8 py-4 text-lg font-bold text-white shadow-[0_18px_44px_rgba(0,0,0,0.2)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/22"
               >
                 Funktionen ansehen
-                <ArrowDown size={18} aria-hidden="true" />
+                <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
               </a>
             </div>
-            <div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+            <div className="mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
               {benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="rounded-md border border-white/15 bg-white/10 p-4 text-sm font-medium leading-6 text-white/86 backdrop-blur"
+                  className="rounded-xl border border-white/20 bg-white/[0.16] px-5 py-6 text-center text-base font-bold leading-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.2)] backdrop-blur-md"
                 >
+                  <Check
+                    className="mx-auto mb-3 h-6 w-6 text-[#8fd2ae]"
+                    strokeWidth={3}
+                    aria-hidden="true"
+                  />
                   {benefit}
                 </div>
               ))}
