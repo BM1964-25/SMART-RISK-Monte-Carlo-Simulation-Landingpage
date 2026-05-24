@@ -4,6 +4,7 @@ import {
   BarChart3,
   BrainCircuit,
   Check,
+  ChevronLeft,
   ChevronRight,
   FileJson,
   FileText,
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
+import simulationSection from "./assets/smart-risk-simulation-section.png";
 import workspaceDashboard from "./assets/smart-risk-workspace-dashboard.png";
 import appIcon from "./assets/smart-risk-icon.jpeg";
 
@@ -67,6 +69,24 @@ const features = [
     icon: FileText,
     title: "Berichte vorbereiten",
     text: "Automatisch generierte Management-Zusammenfassungen mit Kennzahlen, Interpretation und Copy-Funktion nutzen.",
+  },
+];
+
+const workspaceSlides = [
+  {
+    image: workspaceDashboard,
+    title: "Dashboard",
+    text: "Projektkennzahlen, Simulationsergebnisse und Managementhinweise auf einen Blick.",
+  },
+  {
+    image: simulationSection,
+    title: "Simulation",
+    text: "Laufzahl, Zielbudget und Szenario steuern und die Monte-Carlo-Auswertung starten.",
+  },
+  {
+    image: heroScreenshot,
+    title: "Projektstart",
+    text: "Arbeitsbereich mit Projektschritten, lokaler Speicherung und strukturiertem Einstieg.",
   },
 ];
 
@@ -145,6 +165,21 @@ const faqs = [
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeWorkspaceSlide, setActiveWorkspaceSlide] = useState(0);
+
+  const currentWorkspaceSlide = workspaceSlides[activeWorkspaceSlide];
+
+  const showPreviousWorkspaceSlide = () => {
+    setActiveWorkspaceSlide((current) =>
+      current === 0 ? workspaceSlides.length - 1 : current - 1,
+    );
+  };
+
+  const showNextWorkspaceSlide = () => {
+    setActiveWorkspaceSlide((current) =>
+      current === workspaceSlides.length - 1 ? 0 : current + 1,
+    );
+  };
 
   return (
     <main className="bg-paper text-ink">
@@ -356,11 +391,60 @@ function App() {
             </a>
           </div>
           <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
-            <img
-              src={workspaceDashboard}
-              alt="SMART RISK Dashboard mit Kennzahlen und Simulationsergebnissen"
-              className="h-full w-full object-cover"
-            />
+            <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-3 sm:px-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                  Screenshot {activeWorkspaceSlide + 1} / {workspaceSlides.length}
+                </p>
+                <h3 className="mt-1 text-lg font-semibold">
+                  {currentWorkspaceSlide.title}
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-graphite">
+                  {currentWorkspaceSlide.text}
+                </p>
+              </div>
+              <div className="flex flex-none items-center gap-2">
+                <button
+                  type="button"
+                  onClick={showPreviousWorkspaceSlide}
+                  className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 bg-paper text-ink transition hover:bg-mist"
+                  aria-label="Vorheriger Screenshot"
+                >
+                  <ChevronLeft size={18} aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextWorkspaceSlide}
+                  className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 bg-paper text-ink transition hover:bg-mist"
+                  aria-label="Nächster Screenshot"
+                >
+                  <ChevronRight size={18} aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+            <div className="relative bg-paper">
+              <img
+                src={currentWorkspaceSlide.image}
+                alt={`SMART RISK ${currentWorkspaceSlide.title}`}
+                className="aspect-[1.12/1] w-full object-cover object-left-top transition"
+              />
+            </div>
+            <div className="flex items-center justify-center gap-2 border-t border-ink/10 bg-white px-5 py-4">
+              {workspaceSlides.map((slide, index) => (
+                <button
+                  type="button"
+                  key={slide.title}
+                  onClick={() => setActiveWorkspaceSlide(index)}
+                  className={`h-2.5 rounded-full transition ${
+                    index === activeWorkspaceSlide
+                      ? "w-8 bg-sage"
+                      : "w-2.5 bg-mist hover:bg-graphite/35"
+                  }`}
+                  aria-label={`${slide.title} anzeigen`}
+                  aria-current={index === activeWorkspaceSlide}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
