@@ -180,7 +180,9 @@ function App() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-left-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090f]/96 via-[#101522]/88 to-[#101522]/62" />
+        <div className="absolute inset-0 bg-[#05070c]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#05070c]/98 via-[#101522]/92 to-[#101522]/78" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/42 via-transparent to-[#05070c]/30" />
         <div className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-5 py-16 sm:px-8 lg:py-20">
           <div className="max-w-3xl text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
@@ -190,7 +192,7 @@ function App() {
               <Sparkles size={16} aria-hidden="true" />
               Probabilistische Analyse mit KI-gestützter Interpretation
             </div>
-            <h1 className="mt-7 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_10px_28px_rgba(0,0,0,0.42)] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_12px_34px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
               {appName}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
