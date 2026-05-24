@@ -439,28 +439,28 @@ function App() {
               gemeinsamen Cloud-Arbeitsbereich.
             </p>
           </div>
-          <div className="rounded-lg border border-white/22 bg-white/12 p-8 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md">
+          <div className="w-full max-w-[620px] justify-self-end rounded-lg border border-white/22 bg-white/12 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-8">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-[0.04em] text-white/70">
+                <p className="text-sm font-extrabold uppercase tracking-normal text-white/70">
                   Professional
                 </p>
-                <h3 className="mt-2 text-4xl font-extrabold tracking-normal text-white">
+                <h3 className="mt-2 text-[2.45rem] font-extrabold leading-none tracking-normal text-white">
                   Jahreslizenz
                 </h3>
               </div>
-              <BadgeCheck className="h-14 w-14 flex-none text-[#9edbbf]" strokeWidth={2.4} />
+              <BadgeCheck className="mt-1 h-14 w-14 flex-none text-[#9edbbf]" strokeWidth={2.4} />
             </div>
-            <div className="mt-8">
-              <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
-                <span className="text-8xl font-extrabold leading-none tracking-normal text-white">
+            <div className="mt-9">
+              <div className="flex flex-wrap items-end gap-x-5 gap-y-2">
+                <span className="text-[5.4rem] font-extrabold leading-[0.9] tracking-normal text-white sm:text-[6.25rem]">
                   599 €
                 </span>
-                <span className="pb-4 text-lg font-extrabold text-white/88">
+                <span className="pb-3 text-xl font-extrabold leading-7 text-white/88">
                   pro Jahr zzgl. 19% MwSt.
                 </span>
               </div>
-              <p className="mt-4 text-base font-bold leading-7 text-white/78">
+              <p className="mt-5 text-base font-bold leading-7 text-white/78">
                 712,81 € inkl. MwSt.
                 <br />
                 Entspricht 49,92 € netto / 59,40 € brutto pro Monat
@@ -471,7 +471,7 @@ function App() {
                 (item) => (
                   <div
                     key={item}
-                    className="rounded-full border border-white/18 bg-white/12 px-4 py-2 text-center text-base font-extrabold text-white/88"
+                    className="flex min-h-9 items-center justify-center rounded-full border border-white/18 bg-white/12 px-4 py-1.5 text-center text-base font-extrabold leading-5 text-white/88"
                   >
                     {item}
                   </div>
@@ -486,9 +486,9 @@ function App() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-md border border-white/14 bg-[#20324a]/72 p-5 text-center"
+                  className="flex min-h-[110px] flex-col items-center justify-center rounded-md border border-white/14 bg-[#20324a]/72 p-4 text-center"
                 >
-                  <p className="text-sm font-extrabold uppercase text-[#9edbbf]">
+                  <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
                     {label}
                   </p>
                   <p className="mt-3 text-lg font-semibold leading-7 text-white/90">
@@ -497,23 +497,23 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-4 text-center">
-              <p className="text-sm font-extrabold uppercase text-[#9edbbf]">
+            <div className="mt-6 rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-5 text-center">
+              <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
                 Optionale KI-Nutzung
               </p>
-              <p className="mt-1 text-lg font-semibold text-white/90">
-                Eigener Anthropic API-Key nur für KI-Assistenz erforderlich
+              <p className="mt-1 text-lg font-semibold leading-7 text-white/90">
+                Eigener Anthropic API-Key für optionale Assistenz
               </p>
             </div>
             <button
               type="button"
               onClick={() => setIsModalOpen(true)}
-              className="mt-8 inline-flex min-h-[58px] w-full items-center justify-center gap-3 rounded-md bg-white px-6 py-4 text-lg font-extrabold text-ink shadow-[0_20px_48px_rgba(0,0,0,0.25)] transition hover:-translate-y-0.5 hover:bg-white/92"
+              className="mt-9 inline-flex min-h-[58px] w-full items-center justify-center gap-3 rounded-md bg-white px-6 py-4 text-lg font-extrabold text-ink shadow-[0_20px_48px_rgba(0,0,0,0.25)] transition hover:-translate-y-0.5 hover:bg-white/92"
             >
               Lizenz sichern
               <ChevronRight size={24} strokeWidth={2.8} aria-hidden="true" />
             </button>
-            <p className="mt-5 text-center text-base font-bold text-white/62">
+            <p className="mt-5 text-center text-base font-bold leading-7 text-white/62">
               Jahreslizenz | sichere Zahlung | persönlicher Nutzerzugriff
             </p>
           </div>
