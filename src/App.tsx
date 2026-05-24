@@ -114,12 +114,12 @@ const faqs = [
   {
     question: "Was kostet die Lizenz?",
     answer:
-      "Die Jahreslizenz kostet 599 Euro zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
+      "Die Jahreslizenz kostet 199 Euro pro Jahr zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
   },
   {
     question: "Gibt es eine Testphase?",
     answer:
-      "Ja. Es ist eine 7 Tage kostenlose Testphase vorgesehen. Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern.",
+      "Ja. Es ist eine 3 Tage Testphase vorgesehen. Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern.",
   },
   {
     question: "Ersetzt die Simulation eine Fachprüfung?",
@@ -384,60 +384,103 @@ function App() {
         </div>
       </section>
 
-      <section id="license" className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <section id="license" className="bg-[#07182c] text-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.94fr_1.06fr] lg:py-24">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+            <p className="text-sm font-bold uppercase tracking-[0.08em] text-white/70">
               Lizenzmodell
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Jahreslizenz für professionelle Risikoentscheidungen.
+            <h2 className="mt-5 max-w-2xl text-5xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-6xl">
+              Eine professionelle Jahreslizenz für belastbare Risikoentscheidungen.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-graphite">
-              Der Checkout ist in Vorbereitung. Bis zur Aktivierung kannst du
-              eine Vorbestellung vormerken lassen.
+            <p className="mt-7 max-w-2xl text-lg font-semibold leading-8 text-white/72">
+              Für Anwender, die Projekt-, Kosten-, Termin- und CAPEX-Risiken
+              regelmäßig simulieren und dabei Browser-Speicherung, Export und
+              Import sauber nutzen möchten.
+            </p>
+            <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-white/86">
+              Pro Lizenz ist ein persönlicher Nutzerzugriff vorgesehen. Mehrere
+              Lizenzen bedeuten mehrere getrennte Nutzerzugriffe, keinen
+              gemeinsamen Cloud-Arbeitsbereich.
             </p>
           </div>
-          <div className="rounded-md border border-ink/10 bg-white p-8 shadow-panel">
-            <div className="flex flex-wrap items-end justify-between gap-5">
+          <div className="rounded-lg border border-white/22 bg-white/12 p-8 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md">
+            <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-                  SMART RISK Jahreslizenz
+                <p className="text-sm font-extrabold uppercase tracking-[0.04em] text-white/70">
+                  Professional
                 </p>
-                <div className="mt-4 flex items-baseline gap-2">
-                  <span className="font-serif text-5xl font-semibold">
-                    599 Euro
-                  </span>
-                  <span className="text-graphite">/ Jahr</span>
-                </div>
-                <p className="mt-2 text-sm text-graphite">zzgl. 19 % MwSt.</p>
+                <h3 className="mt-2 text-4xl font-extrabold tracking-normal text-white">
+                  Jahreslizenz
+                </h3>
               </div>
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-ink px-6 py-3 font-semibold text-white transition hover:bg-[#130d09]"
-              >
-                Lizenz sichern
-                <ChevronRight size={18} aria-hidden="true" />
-              </button>
+              <BadgeCheck className="h-14 w-14 flex-none text-[#9edbbf]" strokeWidth={2.4} />
             </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-8">
+              <div className="flex flex-wrap items-end gap-x-4 gap-y-2">
+                <span className="text-8xl font-extrabold leading-none tracking-normal text-white">
+                  199 €
+                </span>
+                <span className="pb-4 text-lg font-extrabold text-white/88">
+                  pro Jahr zzgl. 19% MwSt.
+                </span>
+              </div>
+              <p className="mt-4 text-base font-bold leading-7 text-white/78">
+                236,81 € inkl. MwSt.
+                <br />
+                Entspricht 16,58 € netto / 19,73 € brutto pro Monat
+              </p>
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {["12 Monate Laufzeit", "3 Tage testen", "1 Nutzerzugriff"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-white/18 bg-white/12 px-4 py-2 text-center text-base font-extrabold text-white/88"
+                  >
+                    {item}
+                  </div>
+                ),
+              )}
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {[
-                "Laufzeit 12 Monate",
-                "7 Tage kostenlose Testphase",
-                "Automatische Verlängerung um 12 Monate",
-                "Kündigungsfrist 1 Monat vor Ablauf",
-                "Sichere Online-Zahlung in Vorbereitung",
-                "Pro Lizenz ein Nutzerzugriff",
-                "Mehrere Lizenzen derselben App möglich",
-                "Gemeinsamer Checkout mehrerer Apps später vorgesehen",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2 text-graphite">
-                  <Check className="mt-1 h-4 w-4 flex-none text-sage" />
-                  <span>{item}</span>
+                ["Verlängerung", "Automatisch um 12 Monate"],
+                ["Kündigung", "1 Monat vor Ablauf"],
+                ["Zahlung", "Sichere Online-Zahlung"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-md border border-white/14 bg-[#20324a]/72 p-5 text-center"
+                >
+                  <p className="text-sm font-extrabold uppercase text-[#9edbbf]">
+                    {label}
+                  </p>
+                  <p className="mt-3 text-lg font-semibold leading-7 text-white/90">
+                    {value}
+                  </p>
                 </div>
               ))}
             </div>
+            <div className="mt-6 rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-4 text-center">
+              <p className="text-sm font-extrabold uppercase text-[#9edbbf]">
+                KI-Nutzung
+              </p>
+              <p className="mt-1 text-lg font-semibold text-white/90">
+                Eigener Anthropic API-Key erforderlich
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="mt-8 inline-flex min-h-[58px] w-full items-center justify-center gap-3 rounded-md bg-white px-6 py-4 text-lg font-extrabold text-ink shadow-[0_20px_48px_rgba(0,0,0,0.25)] transition hover:-translate-y-0.5 hover:bg-white/92"
+            >
+              Lizenz sichern
+              <ChevronRight size={24} strokeWidth={2.8} aria-hidden="true" />
+            </button>
+            <p className="mt-5 text-center text-base font-bold text-white/62">
+              Jahreslizenz | sichere Zahlung | persönlicher Nutzerzugriff
+            </p>
           </div>
         </div>
       </section>

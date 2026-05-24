@@ -56,4 +56,4 @@ smart-risk-landingpage/
 ## Kauf-Integration
 
 Die Kaufbuttons oeffnen aktuell ein Vorbestell-Hinweisfenster mit Mailto-Link.
-Der sichtbare Lizenztext nennt den Preis von 599 Euro zzgl. 19% MwSt.
+Der sichtbare Lizenztext nennt den Preis von 199 Euro pro Jahr zzgl. 19% MwSt.
