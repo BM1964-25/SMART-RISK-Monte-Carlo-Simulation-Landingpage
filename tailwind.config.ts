@@ -6,13 +6,13 @@ export default {
     extend: {
       colors: {
         ink: "#172338",
-        graphite: "#554f49",
-        paper: "#f7f4ee",
-        mist: "#e4dbcf",
+        graphite: "#41516a",
+        paper: "#eef3f8",
+        mist: "#d8e2ec",
         gold: "#b8924a",
-        sage: "#526f60",
+        sage: "#3f6b65",
         clay: "#8b5f48",
-        ivory: "#fffdf9",
+        ivory: "#f7faff",
       },
       boxShadow: {
         panel: "0 24px 70px rgba(23, 35, 56, 0.16)",
