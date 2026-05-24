@@ -173,7 +173,7 @@ function App() {
 
       <section
         id="hero"
-        className="relative min-h-[calc(100vh-73px)] overflow-hidden bg-ink"
+        className="relative min-h-[640px] overflow-hidden bg-ink lg:min-h-[690px]"
       >
         <img
           src={heroScreenshot}
@@ -181,9 +181,15 @@ function App() {
           className="absolute inset-0 h-full w-full object-cover object-left-top"
         />
         <div className="absolute inset-0 bg-[#05070c]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#05070c]/98 via-[#101522]/92 to-[#101522]/78" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(2,3,8,0.99) 0%, rgba(2,3,8,0.98) 24%, rgba(8,12,22,0.9) 48%, rgba(12,18,30,0.58) 100%)",
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/42 via-transparent to-[#05070c]/30" />
-        <div className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-5 py-16 sm:px-8 lg:py-20">
+        <div className="relative mx-auto flex min-h-[640px] max-w-7xl items-center px-5 py-12 sm:px-8 lg:min-h-[690px] lg:py-16">
           <div className="max-w-3xl text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
               Decision Support Tool für Risiko- und Szenarioanalyse
