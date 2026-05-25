@@ -13,14 +13,12 @@ import {
   Laptop,
   LineChart,
   LockKeyhole,
-  Mail,
   Route,
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
   Target,
   TrendingUp,
-  X,
 } from "lucide-react";
 import { useState } from "react";
 import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
@@ -30,8 +28,7 @@ import appIcon from "./assets/smart-risk-icon.jpeg";
 
 const appName = "SMART RISK Monte-Carlo-Simulation";
 const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
-const preorderMail =
-  "mailto:info@built-smart-hub.com?subject=Vorbestellung%20SMART%20RISK%20Monte-Carlo-Simulation";
+const purchaseLink = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const benefits = [
   "Risiken probabilistisch bewerten und Bandbreiten sichtbar machen.",
@@ -164,7 +161,6 @@ const faqs = [
 ];
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeWorkspaceSlide, setActiveWorkspaceSlide] = useState(0);
 
   const currentWorkspaceSlide = workspaceSlides[activeWorkspaceSlide];
@@ -205,14 +201,13 @@ function App() {
               FAQ
             </a>
           </div>
-          <button
-            type="button"
-            onClick={() => setIsModalOpen(true)}
+          <a
+            href={purchaseLink}
             className="inline-flex items-center gap-2 rounded-md bg-[#130d09] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink"
           >
             Lizenz sichern
             <ChevronRight size={16} aria-hidden="true" />
-          </button>
+          </a>
         </nav>
       </header>
 
@@ -253,14 +248,13 @@ function App() {
               optionaler KI-Unterstützung über eigenen API-Key.
             </p>
             <div className="mt-9 grid max-w-4xl gap-4 sm:grid-cols-2">
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(true)}
+              <a
+                href={purchaseLink}
                 className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-bold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.32)] transition hover:-translate-y-0.5 hover:bg-white/92"
               >
                 Jetzt kaufen
                 <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
-              </button>
+              </a>
               <a
                 href="#features"
                 className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl border border-white/38 bg-white/14 px-8 py-4 text-lg font-bold text-white shadow-[0_18px_44px_rgba(0,0,0,0.2)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/22"
@@ -592,14 +586,13 @@ function App() {
                 Eigener Anthropic API-Key für optionale Assistenz
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href={purchaseLink}
               className="mt-9 inline-flex min-h-[58px] w-full items-center justify-center gap-3 rounded-md bg-white px-6 py-4 text-lg font-extrabold text-ink shadow-[0_20px_48px_rgba(0,0,0,0.25)] transition hover:-translate-y-0.5 hover:bg-white/92"
             >
               Lizenz sichern
               <ChevronRight size={24} strokeWidth={2.8} aria-hidden="true" />
-            </button>
+            </a>
             <p className="mt-5 text-center text-base font-bold leading-7 text-white/62">
               Jahreslizenz | sichere Zahlung | persönlicher Nutzerzugriff
             </p>
@@ -683,68 +676,7 @@ function App() {
           </div>
         </div>
       </footer>
-
-      {isModalOpen ? <PreorderModal onClose={() => setIsModalOpen(false)} /> : null}
     </main>
-  );
-}
-
-function PreorderModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div
-      className="fixed inset-0 z-[80] grid place-items-center bg-ink/70 px-5 py-8 backdrop-blur-sm"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="preorder-title"
-    >
-      <div className="w-full max-w-lg rounded-md bg-ivory p-7 shadow-panel">
-        <div className="flex items-start justify-between gap-5">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-              Kaufbereich
-            </p>
-            <h2
-              id="preorder-title"
-              className="mt-2 font-serif text-3xl font-semibold"
-            >
-              {appName} ist in Vorbereitung.
-            </h2>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="grid h-9 w-9 place-items-center rounded-md border border-ink/10 bg-white text-ink"
-            aria-label="Schließen"
-          >
-            <X size={18} aria-hidden="true" />
-          </button>
-        </div>
-        <p className="mt-5 leading-8 text-graphite">
-          Der Kaufbereich wird derzeit vorbereitet. Bei Interesse kannst du eine
-          Vorbestellung vormerken lassen.
-        </p>
-        <p className="mt-4 leading-8 text-graphite">
-          Sobald Trial, Zahlung und Lizenzfreischaltung aktiv sind, führt der
-          Kaufbutton direkt zur sicheren Online-Bestellung.
-        </p>
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={preorderMail}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-ink px-5 py-3 font-semibold text-white transition hover:bg-[#130d09]"
-          >
-            <Mail size={18} aria-hidden="true" />
-            Vorbestellung anfragen
-          </a>
-          <button
-            type="button"
-            onClick={onClose}
-            className="inline-flex items-center justify-center rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink"
-          >
-            Schließen
-          </button>
-        </div>
-      </div>
-    </div>
   );
 }
 
