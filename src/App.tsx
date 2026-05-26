@@ -563,7 +563,7 @@ function App() {
               {[
                 ["Verlängerung", "Automatisch um 12 Monate"],
                 ["Kündigung", "1 Monat vor Ablauf"],
-                ["Zahlung", "Sichere Online-Zahlung"],
+                ["Zahlung", "Sicherer Online-Zahlung"],
               ].map(([label, value]) => (
                 <div
                   key={label}
