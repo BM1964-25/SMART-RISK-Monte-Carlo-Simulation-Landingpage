@@ -452,25 +452,65 @@ function App() {
 
       <section id="features" className="bg-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-              Funktionen
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+                Funktionen
+              </p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+                Vom Risikomodell bis zur Entscheidungsvorlage.
+              </h2>
+            </div>
+            <p className="max-w-3xl text-lg leading-8 text-graphite">
+              SMART RISK führt Bewertungslogik, Unsicherheiten, Simulation,
+              Szenarien und Berichtsausgabe in einem nachvollziehbaren
+              Arbeitsfluss zusammen.
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Vom Risikomodell bis zur Entscheidungsvorlage.
-            </h2>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, title, text }) => (
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {features.slice(0, 3).map(({ icon: Icon, title, text }, index) => (
               <article
                 key={title}
-                className="rounded-md border border-ink/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-panel"
+                className="rounded-md border border-ink/10 bg-white p-7 shadow-sm"
               >
-                <Icon className="h-8 w-8 text-gold" aria-hidden="true" />
-                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-                <p className="mt-3 leading-7 text-graphite">{text}</p>
+                <div className="flex items-start justify-between gap-5">
+                  <Icon className="h-9 w-9 text-gold" aria-hidden="true" />
+                  <span className="text-sm font-semibold text-graphite/60">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="mt-7 text-2xl font-semibold leading-8">
+                  {title}
+                </h3>
+                <p className="mt-4 leading-8 text-graphite">{text}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-6 rounded-md border border-ink/10 bg-ivory p-5 sm:p-6">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <h3 className="text-xl font-semibold">
+                Vertiefende Analyse- und Arbeitsfunktionen
+              </h3>
+              <span className="text-sm font-semibold text-graphite">
+                Szenarien, Sensitivität, Bericht und Daten
+              </span>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {features.slice(3).map(({ icon: Icon, title, text }) => (
+                <article
+                  key={title}
+                  className="flex gap-4 rounded-md border border-ink/10 bg-white p-5"
+                >
+                  <Icon className="mt-1 h-6 w-6 flex-none text-sage" aria-hidden="true" />
+                  <div>
+                    <h4 className="font-semibold leading-6">{title}</h4>
+                    <p className="mt-2 text-sm leading-6 text-graphite">
+                      {text}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
