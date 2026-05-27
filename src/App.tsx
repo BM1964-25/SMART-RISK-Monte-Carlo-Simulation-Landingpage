@@ -284,7 +284,8 @@ function App() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl text-3xl font-extrabold leading-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.65)] sm:text-4xl">
-              Projektrisiken simulieren. Budgets besser entscheiden.
+              <span className="block">Projektrisiken simulieren.</span>
+              <span className="block">Budgets besser entscheiden.</span>
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80 sm:text-xl">
               Kosten-, Termin-, CAPEX- und Projektrisiken in Bau-, Immobilien-
