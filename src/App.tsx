@@ -373,7 +373,7 @@ function App() {
             </p>
           </div>
           <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
-            <div className="grid gap-4 lg:grid-cols-3">
+            <div className="grid gap-4">
               {[
                 {
                   label: "Ausgangslage",
@@ -393,25 +393,36 @@ function App() {
               ].map(({ label, title, text }) => (
                 <article
                   key={title}
-                  className="rounded-md border border-ink/10 bg-paper p-5"
+                  className="grid gap-5 rounded-md border border-ink/10 bg-paper p-5 sm:grid-cols-[9rem_1fr] sm:items-start"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                    {label}
-                  </p>
-                  <h3 className="mt-4 text-xl font-semibold leading-7">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-graphite">
-                    {text}
-                  </p>
+                  <div className="flex items-center gap-3 sm:block">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-sage ring-1 ring-ink/10">
+                      {label === "Ausgangslage"
+                        ? "1"
+                        : label === "Analyse"
+                          ? "2"
+                          : "3"}
+                    </span>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold sm:mt-4">
+                      {label}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold leading-8">
+                      {title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-base leading-8 text-graphite">
+                      {text}
+                    </p>
+                  </div>
                 </article>
               ))}
             </div>
-            <div className="mt-5 grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-5 sm:grid-cols-[auto_1fr] sm:items-center">
+            <div className="mt-5 grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-6 sm:grid-cols-[auto_1fr] sm:items-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage text-white">
                 <Target size={22} aria-hidden="true" />
               </div>
-              <p className="text-base font-semibold leading-7 text-ink">
+              <p className="text-lg font-semibold leading-8 text-ink">
                 Ergebnis: Aus Annahmen werden nachvollziehbare
                 Entscheidungsvorlagen für Bau, Immobilien und Projektsteuerung,
                 ohne die fachliche Freigabe aus der Hand zu geben.
