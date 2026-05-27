@@ -598,43 +598,63 @@ function App() {
         </div>
       </section>
 
-      <section id="workspace" className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.92fr_1.08fr]">
+      <section id="workspace" className="border-y border-ink/10 bg-paper">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               Nutzung / Eigener Arbeitsbereich
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Browserbasiert, lokal speichernd und projektorientiert.
+            <h2 className="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Ein persönlicher Arbeitsbereich für Risikoentscheidungen.
             </h2>
-            <div className="mt-8 grid gap-4">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite">
+              SMART RISK läuft direkt im Browser, hält lokale Projektdaten
+              kontrollierbar und verbindet Bewertungsmodell, Simulation,
+              Szenarien und Ergebnisanalyse in einem fokussierten Workspace.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              {["Keine Desktop-Installation", "Lokaler Browser-Speicher", "JSON- und CSV-Workflows"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-semibold text-ink"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 {
                   icon: Laptop,
-                  title: "Direkt im Webbrowser öffnen",
-                  text: "Die App läuft über einen Link im Browser. Eine separate Desktop-Installation ist nicht erforderlich.",
+                  title: "Direkt öffnen",
+                  text: "Über einen Link im Webbrowser starten und ohne separate Desktop-Installation arbeiten.",
                 },
                 {
                   icon: ShieldCheck,
-                  title: "Lokale Inhalte",
-                  text: "Projektdaten, Modelle und Simulationseinstellungen werden lokal im Browser gespeichert und nicht automatisch in einer Cloud-Datenbank geteilt.",
+                  title: "Daten kontrollieren",
+                  text: "Projekte, Modelle und Simulationseinstellungen lokal halten, ohne automatische zentrale Cloud-Datenbank.",
                 },
                 {
                   icon: FileJson,
-                  title: "Export und Import",
-                  text: "JSON-Import und JSON-Export sichern Projektdaten; CSV-Exporte und Vorlagen unterstützen Auswertung und Datenmanagement.",
+                  title: "Exportieren und übertragen",
+                  text: "Projektdaten per JSON sichern; CSV-Exporte und Vorlagen für Auswertung und Datenmanagement nutzen.",
                 },
                 {
                   icon: LockKeyhole,
-                  title: "Konto und Lizenz",
-                  text: "Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern. Gemeinsame Cloud-Arbeitsbereiche sind nicht vorgesehen.",
+                  title: "Persönlich lizenzieren",
+                  text: "Trial, Kauf und Lizenzprüfung können ein Konto oder E-Mail/Magic-Link-Login erfordern.",
                 },
               ].map(({ icon: Icon, title, text }) => (
-                <div key={title} className="flex gap-4 rounded-md bg-white p-5">
-                  <Icon className="mt-1 h-6 w-6 flex-none text-sage" />
+                <div
+                  key={title}
+                  className="rounded-md border border-ink/10 bg-white p-5"
+                >
+                  <Icon className="h-6 w-6 text-sage" />
                   <div>
-                    <h3 className="font-semibold">{title}</h3>
-                    <p className="mt-1 leading-7 text-graphite">{text}</p>
+                    <h3 className="mt-4 font-semibold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
                   </div>
                 </div>
               ))}
@@ -648,10 +668,10 @@ function App() {
             </a>
           </div>
           <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
-            <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-3 sm:px-5">
+            <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-4 sm:px-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                  Screenshot {activeWorkspaceSlide + 1} / {workspaceSlides.length}
+                  Live-Einblick {activeWorkspaceSlide + 1} / {workspaceSlides.length}
                 </p>
                 <h3 className="mt-1 text-lg font-semibold">
                   {currentWorkspaceSlide.title}
@@ -679,7 +699,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="relative bg-paper">
+            <div className="relative bg-[#edf3f8]">
               <img
                 src={currentWorkspaceSlide.image}
                 alt={`SMART RISK ${currentWorkspaceSlide.title}`}
