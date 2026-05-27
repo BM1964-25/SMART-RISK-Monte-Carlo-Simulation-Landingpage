@@ -195,54 +195,64 @@ const audienceGroups = [
 
 const faqs = [
   {
-    question: "Ist die App browserbasiert?",
+    question: "Welchen Nutzen bietet SMART RISK Monte-Carlo-Simulation?",
     answer:
-      "Ja. SMART RISK wird über einen Link im Webbrowser geöffnet. Eine separate Desktop-Installation ist nicht erforderlich.",
+      "SMART RISK macht Projekt-, Kosten-, Termin-, CAPEX- und Szenariorisiken als Bandbreiten sichtbar. Statt nur mit Einzelwerten zu planen, kannst du Unsicherheiten modellieren, Monte-Carlo-Simulationen durchführen und Ergebnisse als verständliche Managementaussage mit Perzentilen, Risikopuffer und Zielbudgetbewertung vorbereiten.",
   },
   {
-    question: "Brauche ich einen API-Key?",
+    question: "Wie wird die App geöffnet?",
     answer:
-      "Nur für die optionale KI-Assistenz. Die Simulation, Modellierung und Auswertung bleiben fachlich und rechnerisch lokal im Browser nutzbar. Wenn du KI-Unterstützung für Formulierungen, Strukturierung oder Ergebnisinterpretation verwenden möchtest, ist ein eigener Anthropic API-Key erforderlich.",
+      "Die App wird nach dem Download über den mitgelieferten Starter geöffnet. Sie läuft lokal auf deinem Gerät und wird anschließend im Browser angezeigt.",
   },
   {
-    question: "Werden Projektdaten automatisch in einer Cloud gespeichert?",
+    question: "Gibt es eine Windows- und macOS-Version?",
     answer:
-      "Nein. Inhalte werden lokal im Browser gespeichert. Andere Nutzer haben keinen Zugriff auf lokale Projektdaten.",
+      "Ja. SMART RISK kann auf Windows und macOS lokal im Browser genutzt werden. Dafür gibt es passende Starter für das jeweilige System.",
   },
   {
-    question: "Welche Daten kann ich exportieren?",
+    question: "Werden Daten in der Cloud gespeichert?",
     answer:
-      "Die App unterstützt JSON-Import und JSON-Export für Projektdaten sowie CSV-Export der Simulationsergebnisse. Zusätzlich gibt es Datenvorlagen und CSV-Importe für Parameter und Risiken.",
+      "Nein. Deine Inhalte werden lokal auf deinem Gerät bzw. im lokalen Browser-Speicher gespeichert. Es gibt keine automatische zentrale Cloud-Datenbank und keine automatische Synchronisierung zwischen Nutzern.",
   },
   {
-    question: "Kann ich eigene Formeln verwenden?",
+    question: "Kann ich Daten exportieren?",
     answer:
-      "Ja. Eigene Formeln können erstellt, geprüft, gespeichert und wiederverwendet werden. Fachliche Formelvorlagen und eigene Bewertungslogik bleiben dabei klar getrennt.",
+      "Ja. Du kannst lokale Arbeitsdaten als JSON exportieren und später wieder importieren, zum Beispiel zur Sicherung oder zur Übertragung auf ein anderes Gerät. Simulationsergebnisse können zusätzlich als CSV für Auswertung und Dokumentation genutzt werden.",
   },
   {
-    question: "Gibt es Demo-Daten?",
+    question: "Gibt es KI-Funktionen?",
     answer:
-      "Ja. Demo-Daten können genutzt werden, um den Workflow von Bewertungsmodell über Unsicherheiten bis zur Ergebnisanalyse schnell zu verstehen.",
+      "Ja. Die optionale KI-Assistenz unterstützt bei Formelvorschlägen, Risikoideen, Szenarien, Ergebnisinterpretationen und Berichtstexten. Die Simulation, Plausibilisierung und fachliche Freigabe bleiben weiterhin beim Nutzer.",
   },
   {
-    question: "Was kostet die Lizenz?",
+    question: "Warum brauche ich einen Anthropic API-Key?",
     answer:
-      "Die Jahreslizenz kostet 599 Euro pro Jahr zzgl. 19 % MwSt. Die Laufzeit beträgt 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekündigt wird.",
+      "Die KI-Funktionen laufen über die Anthropic API. Dafür wird ein eigener Anthropic API-Key benötigt. Ein normales Claude-Abo, zum Beispiel Claude Pro, ist dafür nicht ausreichend. Für die API-Nutzung können zusätzliche Kosten nach Anthropic-Abrechnung entstehen. Inhalte werden nur für die jeweilige KI-Anfrage an den Anbieter übertragen.",
   },
   {
-    question: "Gibt es eine Testphase?",
+    question: "Gibt es eine kostenlose Testphase?",
     answer:
-      "Ja. Es ist eine 3 Tage Testphase vorgesehen. Trial, Kauf und Lizenzprüfung können ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern.",
+      "Ja, sofern dieses Modell aktiviert ist. SMART RISK kann dann für 3 Tage mit vollem Funktionsumfang getestet werden.",
   },
   {
-    question: "Ersetzt die Simulation eine Fachprüfung?",
+    question: "Brauche ich ein Nutzerkonto?",
     answer:
-      "Nein. Die Ergebnisse sind eine Management- und Entscheidungshilfe. Fachliche, technische und vertragliche Plausibilisierung bleibt erforderlich.",
+      "Für Testphase, Kauf und Lizenzprüfung kann ein Nutzerkonto erforderlich sein. Die gespeicherten Inhalte der App bleiben davon getrennt lokal auf deinem Gerät.",
   },
   {
-    question: "Gibt es gemeinsame Cloud-Arbeitsbereiche?",
+    question: "Wie funktioniert die Lizenz?",
     answer:
-      "In dieser Version nicht. Der Fokus liegt auf einem persönlichen, browserbasierten Arbeitsbereich mit lokal gespeicherten Inhalten.",
+      "Du erhältst eine Jahreslizenz für 12 Monate. Sie verlängert sich automatisch um weitere 12 Monate, sofern sie nicht spätestens 1 Monat vor Ablauf gekündigt wird. Der Preis beträgt 599 Euro pro Jahr zzgl. 19 % MwSt. pro persönlichem Nutzerzugriff.",
+  },
+  {
+    question: "Kann ich eigene Bewertungsmodelle und Formeln verwenden?",
+    answer:
+      "Ja. Du kannst fachliche Formelvorlagen nutzen, eigene Formeln erstellen, prüfen, speichern und wiederverwenden. Parameter lassen sich beziffern und vor der Simulation als Sofortergebnis plausibilisieren.",
+  },
+  {
+    question: "Welche Ergebnisse liefert die Monte-Carlo-Simulation?",
+    answer:
+      "SMART RISK zeigt Ergebnisverteilungen, Perzentile wie P50, P80 und P90, Budgetüberschreitungswahrscheinlichkeiten, Risikopuffer, Sensitivitäten und Szenarienvergleiche. Daraus entstehen nachvollziehbare Grundlagen für Managemententscheidungen.",
   },
 ];
 
@@ -1020,25 +1030,50 @@ function App() {
       </section>
 
       <section id="faq" className="border-t border-ink/10 bg-ivory">
-        <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-            FAQ
-          </p>
-          <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-            Häufige Fragen
-          </h2>
-          <div className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
-            {faqs.map(({ question, answer }) => (
-              <details key={question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-semibold">
-                  {question}
-                  <ChevronRight className="h-5 w-5 flex-none transition group-open:rotate-90" />
-                </summary>
-                <p className="mt-4 max-w-3xl leading-8 text-graphite">
-                  {answer}
-                </p>
-              </details>
-            ))}
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:py-24">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+              FAQ
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Häufige Fragen zu Nutzung, Daten und Lizenz.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-graphite">
+              Die wichtigsten Antworten zu lokaler Nutzung, Export,
+              KI-Assistenz, API-Key und Jahreslizenz auf einen Blick.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {["Lokal nutzbar", "Eigener API-Key", "599 € Jahreslizenz"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-ink/10 bg-white px-5 py-3 text-center text-sm font-bold text-ink"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-lg border border-ink/10 bg-white p-4 shadow-[0_18px_48px_rgba(16,31,53,0.06)] sm:p-6">
+            <div className="divide-y divide-ink/10">
+              {faqs.map(({ question, answer }, index) => (
+                <details key={question} className="group py-5 first:pt-1 last:pb-1">
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-5">
+                    <span className="flex gap-4">
+                      <span className="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full border border-sage/20 bg-[#e9f1f8] text-xs font-extrabold text-sage">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-lg font-extrabold leading-7 text-ink">
+                        {question}
+                      </span>
+                    </span>
+                    <ChevronRight className="mt-1 h-5 w-5 flex-none text-sage transition group-open:rotate-90" />
+                  </summary>
+                  <p className="mt-4 max-w-3xl pl-12 leading-8 text-graphite">
+                    {answer}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

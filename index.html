@@ -78,7 +78,7 @@
             "name": "SMART RISK Monte-Carlo-Simulation",
             "applicationCategory": "BusinessApplication",
             "applicationSubCategory": "Risk Management Software",
-            "operatingSystem": "Webbrowser",
+            "operatingSystem": "Windows, macOS",
             "url": "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/",
             "image": "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation-Landingpage/smart-risk-og.png",
             "description": "Browserbasierte Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse in Bau, Immobilien, Projektsteuerung, Projektmanagement und Risikomanagement. Die App nutzt fachliche Formelvorlagen und eigene Formeln, modelliert Unsicherheiten, fuehrt Monte-Carlo-Simulationen durch, analysiert Perzentile und Sensitivitaeten und unterstuetzt optional mit KI-Assistenz fuer Formeln, Risikoideen, Szenarien und Berichtstexte.",
@@ -100,7 +100,7 @@
               "CSV-Export der Simulationsergebnisse",
               "Optionale KI-Assistenz mit eigenem Anthropic API-Key"
             ],
-            "softwareRequirements": "Webbrowser. Inhalte werden lokal im Browser gespeichert; keine automatische zentrale Cloud-Datenbank und keine automatische Synchronisierung zwischen Nutzern.",
+            "softwareRequirements": "Lokaler Starter fuer Windows oder macOS und moderner Webbrowser. Inhalte werden lokal auf dem Geraet bzw. im lokalen Browser-Speicher gespeichert; keine automatische zentrale Cloud-Datenbank und keine automatische Synchronisierung zwischen Nutzern.",
             "license": "Jahreslizenz, 12 Monate Laufzeit, automatische Verlaengerung um 12 Monate, Kuendigungsfrist 1 Monat vor Ablauf, pro Lizenz ein persoenlicher Nutzerzugriff, keine gemeinsamen Cloud-Arbeitsbereiche.",
             "offers": {
               "@id": "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation-Landingpage/#offer"
@@ -129,82 +129,98 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Ist die App browserbasiert?",
+                "name": "Welchen Nutzen bietet SMART RISK Monte-Carlo-Simulation?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja. SMART RISK wird ueber einen Link im Webbrowser geoeffnet. Eine separate Desktop-Installation ist nicht erforderlich."
+                  "text": "SMART RISK macht Projekt-, Kosten-, Termin-, CAPEX- und Szenariorisiken als Bandbreiten sichtbar. Statt nur mit Einzelwerten zu planen, koennen Unsicherheiten modelliert, Monte-Carlo-Simulationen durchgefuehrt und Ergebnisse als verstaendliche Managementaussage mit Perzentilen, Risikopuffer und Zielbudgetbewertung vorbereitet werden."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Brauche ich einen API-Key?",
+                "name": "Wie wird die App geoeffnet?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nur fuer die optionale KI-Assistenz. Die Simulation, Modellierung und Auswertung bleiben fachlich und rechnerisch lokal im Browser nutzbar. Wenn KI-Unterstuetzung fuer Formulierungen, Strukturierung oder Ergebnisinterpretation verwendet wird, ist ein eigener Anthropic API-Key erforderlich."
+                  "text": "Die App wird nach dem Download ueber den mitgelieferten Starter geoeffnet. Sie laeuft lokal auf dem Geraet und wird anschliessend im Browser angezeigt."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Werden Projektdaten automatisch in einer Cloud gespeichert?",
+                "name": "Gibt es eine Windows- und macOS-Version?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nein. Inhalte werden lokal im Browser gespeichert. Andere Nutzer haben keinen Zugriff auf lokale Projektdaten."
+                  "text": "Ja. SMART RISK kann auf Windows und macOS lokal im Browser genutzt werden. Dafuer gibt es passende Starter fuer das jeweilige System."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Welche Daten kann ich exportieren?",
+                "name": "Werden Daten in der Cloud gespeichert?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Die App unterstuetzt JSON-Import und JSON-Export fuer Projektdaten sowie CSV-Export der Simulationsergebnisse. Zusaetzlich gibt es Datenvorlagen und CSV-Importe fuer Parameter und Risiken."
+                  "text": "Nein. Inhalte werden lokal auf dem Geraet bzw. im lokalen Browser-Speicher gespeichert. Es gibt keine automatische zentrale Cloud-Datenbank und keine automatische Synchronisierung zwischen Nutzern."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Kann ich eigene Formeln verwenden?",
+                "name": "Kann ich Daten exportieren?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja. Eigene Formeln koennen erstellt, geprueft, gespeichert und wiederverwendet werden. Fachliche Formelvorlagen und eigene Bewertungslogik bleiben dabei klar getrennt."
+                  "text": "Ja. Lokale Arbeitsdaten koennen als JSON exportiert und spaeter wieder importiert werden, zum Beispiel zur Sicherung oder zur Uebertragung auf ein anderes Geraet. Simulationsergebnisse koennen zusaetzlich als CSV fuer Auswertung und Dokumentation genutzt werden."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Gibt es Demo-Daten?",
+                "name": "Gibt es KI-Funktionen?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja. Demo-Daten koennen genutzt werden, um den Workflow von Bewertungsmodell ueber Unsicherheiten bis zur Ergebnisanalyse schnell zu verstehen."
+                  "text": "Ja. Die optionale KI-Assistenz unterstuetzt bei Formelvorschlaegen, Risikoideen, Szenarien, Ergebnisinterpretationen und Berichtstexten. Die Simulation, Plausibilisierung und fachliche Freigabe bleiben weiterhin beim Nutzer."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Was kostet die Lizenz?",
+                "name": "Warum brauche ich einen Anthropic API-Key?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Die Jahreslizenz kostet 599 Euro pro Jahr zzgl. 19 % MwSt. Die Laufzeit betraegt 12 Monate und verlaengert sich automatisch um weitere 12 Monate, wenn sie nicht 1 Monat vor Ablauf gekuendigt wird."
+                  "text": "Die KI-Funktionen laufen ueber die Anthropic API. Dafuer wird ein eigener Anthropic API-Key benoetigt. Ein normales Claude-Abo, zum Beispiel Claude Pro, ist dafuer nicht ausreichend. Fuer die API-Nutzung koennen zusaetzliche Kosten nach Anthropic-Abrechnung entstehen. Inhalte werden nur fuer die jeweilige KI-Anfrage an den Anbieter uebertragen."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Gibt es eine Testphase?",
+                "name": "Gibt es eine kostenlose Testphase?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja. Es ist eine 3 Tage Testphase vorgesehen. Trial, Kauf und Lizenzpruefung koennen ein Nutzerkonto oder E-Mail/Magic-Link-Login erfordern."
+                  "text": "Ja, sofern dieses Modell aktiviert ist. SMART RISK kann dann fuer 3 Tage mit vollem Funktionsumfang getestet werden."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Ersetzt die Simulation eine Fachpruefung?",
+                "name": "Brauche ich ein Nutzerkonto?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nein. Die Ergebnisse sind eine Management- und Entscheidungshilfe. Fachliche, technische und vertragliche Plausibilisierung bleibt erforderlich."
+                  "text": "Fuer Testphase, Kauf und Lizenzpruefung kann ein Nutzerkonto erforderlich sein. Die gespeicherten Inhalte der App bleiben davon getrennt lokal auf dem Geraet."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Gibt es gemeinsame Cloud-Arbeitsbereiche?",
+                "name": "Wie funktioniert die Lizenz?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "In dieser Version nicht. Der Fokus liegt auf einem persoenlichen, browserbasierten Arbeitsbereich mit lokal gespeicherten Inhalten."
+                  "text": "Die Jahreslizenz laeuft 12 Monate. Sie verlaengert sich automatisch um weitere 12 Monate, sofern sie nicht spaetestens 1 Monat vor Ablauf gekuendigt wird. Der Preis betraegt 599 Euro pro Jahr zzgl. 19 % MwSt. pro persoenlichem Nutzerzugriff."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kann ich eigene Bewertungsmodelle und Formeln verwenden?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja. Fachliche Formelvorlagen koennen genutzt, eigene Formeln erstellt, geprueft, gespeichert und wiederverwendet werden. Parameter lassen sich beziffern und vor der Simulation als Sofortergebnis plausibilisieren."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche Ergebnisse liefert die Monte-Carlo-Simulation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SMART RISK zeigt Ergebnisverteilungen, Perzentile wie P50, P80 und P90, Budgetueberschreitungswahrscheinlichkeiten, Risikopuffer, Sensitivitaeten und Szenarienvergleiche. Daraus entstehen nachvollziehbare Grundlagen fuer Managemententscheidungen."
                 }
               }
             ]

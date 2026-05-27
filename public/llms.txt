@@ -1,9 +1,9 @@
 # SMART RISK Monte-Carlo-Simulation
 
 App-Name: SMART RISK Monte-Carlo-Simulation
-Kurzbeschreibung: Browserbasierte Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse in Bau, Immobilien, Projektsteuerung sowie Projekt- und Risikomanagement mit Monte-Carlo-Simulation, lokalem Projektspeicher, fachlichen/eigenen Bewertungsmodellen und optionaler KI-Assistenz.
+Kurzbeschreibung: Lokale Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse in Bau, Immobilien, Projektsteuerung sowie Projekt- und Risikomanagement mit Monte-Carlo-Simulation, Browseroberflaeche, lokalem Projektspeicher, fachlichen/eigenen Bewertungsmodellen und optionaler KI-Assistenz.
 Kategorie: BusinessApplication; Risk Management Software; probabilistische Projekt-, Kosten-, Termin- und CAPEX-Risikoanalyse.
-Zielgruppe: Bau, Immobilien, Projektsteuerung, Projektmanagement, Risikomanagement, Bauherren, Investoren, Immobilienentwickler, Controller, Consultants, Selbststaendige und kleine Teams.
+Zielgruppe: Bau, Immobilien, Projektsteuerung, Projektmanagement, Risikomanagement, Bauherren, Investoren, Immobilienentwickler, Asset Manager, Portfolio Manager, Controller, Consultants, Kostenplaner, Cost Manager, Projektcontrolling, PMO, technische Due Diligence, Generalunternehmer und Bauunternehmen.
 Hauptnutzen: Budgetrisiken und Unsicherheiten als Verteilungen sichtbar machen, Perzentile und Zielabweichungen auswerten, Risikotreiber erkennen und belastbare Managementaussagen vorbereiten.
 
 Zentrale Funktionen:
@@ -24,9 +24,10 @@ KI-Funktionen:
 - Fuer die optionale KI-Assistenz ist ein eigener Anthropic API-Key erforderlich.
 
 Nutzungsmodell:
-- Browserbasierte Einzelplatzanwendung.
+- Lokale Einzelplatzanwendung mit Browseroberflaeche.
 - App-URL: https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/
-- Keine separate Desktop-Installation erforderlich.
+- Oeffnung nach dem Download ueber einen mitgelieferten Starter.
+- Die App laeuft lokal auf dem Geraet und wird anschliessend im Browser angezeigt.
 - Pro Lizenz ist ein persoenlicher Nutzerzugriff vorgesehen.
 - Mehrere Lizenzen derselben App sind moeglich.
 - Keine gemeinsamen Cloud-Arbeitsbereiche in dieser Version.
@@ -48,8 +49,8 @@ Lizenzmodell:
 - Kauf-/Kontaktlink: https://bm1964-25.github.io/Landing-Tafel-Kontakt/
 
 Plattformen:
-- Webbrowser auf Desktop- und Notebook-Systemen.
-- Betriebssystemunabhaengig, sofern ein moderner Webbrowser verfuegbar ist.
+- Windows und macOS mit passendem lokalem Starter.
+- Anzeige und Bedienung im lokalen Webbrowser auf Desktop- und Notebook-Systemen.
 
 Export-/Import-Funktionen:
 - JSON-Import und JSON-Export fuer Projektdaten.
