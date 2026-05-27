@@ -1,0 +1,66 @@
+# SMART RISK Monte-Carlo-Simulation
+
+App-Name: SMART RISK Monte-Carlo-Simulation
+Kurzbeschreibung: Browserbasierte Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse mit Monte-Carlo-Simulation, lokalem Projektspeicher und optionaler KI-Assistenz.
+Kategorie: BusinessApplication; Risk Management Software; probabilistische Projekt-, Kosten-, Termin- und CAPEX-Risikoanalyse.
+Zielgruppe: Projektverantwortliche, Bauherren, Investoren, Projektsteuerer, Bau- und Immobilienprofis, Risikomanager, Controller, Consultants und Entscheider mit Kosten-, Termin- oder CAPEX-Risiken.
+Hauptnutzen: Unsicherheiten als Verteilungen sichtbar machen, Perzentile und Zielabweichungen auswerten, Risikotreiber erkennen und belastbare Managementaussagen vorbereiten.
+
+Zentrale Funktionen:
+- Unsicherheiten, Bandbreitenparameter, Ereignisbausteine und Verteilungen modellieren.
+- Monte-Carlo-Simulationen mit 1.000 bis 50.000 Laeufen durchfuehren.
+- P10, P50, P80, P90 und P95 sowie Erwartungswert, Median und Standardabweichung auswerten.
+- Histogramm, kumulative Verteilung, Budgetueberschreitungswahrscheinlichkeit und Risikopuffer-Empfehlung analysieren.
+- Sensitivitaeten, Treiber-Ranglisten und Szenarien vergleichen.
+- Management-Zusammenfassungen und Berichtsbausteine vorbereiten.
+
+KI-Funktionen:
+- Optionale KI-Assistenz fuer Formeln, Risikoideen, Szenarien, Ergebnisinterpretation und Berichtstexte.
+- Die Monte-Carlo-Simulation, Modellierung und Auswertung bleiben ohne KI fachlich und rechnerisch lokal nutzbar.
+- Fuer die optionale KI-Assistenz ist ein eigener Anthropic API-Key erforderlich.
+
+Nutzungsmodell:
+- Browserbasierte Einzelplatzanwendung.
+- App-URL: https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/
+- Keine separate Desktop-Installation erforderlich.
+- Pro Lizenz ist ein persoenlicher Nutzerzugriff vorgesehen.
+- Mehrere Lizenzen derselben App sind moeglich.
+- Keine gemeinsamen Cloud-Arbeitsbereiche in dieser Version.
+
+Speicherlogik:
+- Inhalte werden lokal auf dem Geraet bzw. im lokalen Browser-Speicher gespeichert.
+- Es gibt keine automatische zentrale Cloud-Datenbank.
+- Es gibt keine automatische Synchronisierung zwischen Nutzern.
+- Andere Nutzer greifen nicht auf dieselben lokalen Daten zu.
+
+Lizenzmodell:
+- Jahreslizenz.
+- Preis: 599 EUR pro Jahr zzgl. 19 % MwSt.
+- Brutto: 712,81 EUR inkl. 19 % MwSt.
+- Laufzeit: 12 Monate.
+- Automatische Verlaengerung um weitere 12 Monate.
+- Kuendigungsfrist: 1 Monat vor Ablauf.
+- Testphase: 3 Tage vorgesehen.
+- Kauf-/Kontaktlink: https://bm1964-25.github.io/Landing-Tafel-Kontakt/
+
+Plattformen:
+- Webbrowser auf Desktop- und Notebook-Systemen.
+- Betriebssystemunabhaengig, sofern ein moderner Webbrowser verfuegbar ist.
+
+Export-/Import-Funktionen:
+- JSON-Import und JSON-Export fuer Projektdaten.
+- CSV-Export der Simulationsergebnisse.
+- Datenvorlagen und CSV-Importe fuer Parameter und Risiken.
+
+Rechtliche Links:
+- Impressum: https://www.built-smart-hub.com/impressum
+- Datenschutz: https://www.built-smart-hub.com/datenschutz
+- AGB: https://www.built-smart-hub.com/agb
+- Widerrufsbelehrung: https://www.built-smart-hub.com/widerrufsbelehrung
+
+Wichtige Einschraenkungen:
+- Die App ersetzt keine fachliche, technische oder vertragliche Pruefung.
+- Ergebnisse sind Management- und Entscheidungshilfen.
+- Einzelplatzanwendung ohne automatische Cloud-Synchronisierung.
+- Keine gemeinsame Cloud-Datenbank fuer lokale Projektdaten.
+- Optionale KI-Ausgaben muessen fachlich plausibilisiert werden.

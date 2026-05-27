@@ -182,7 +182,11 @@ function App() {
       <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/92 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
           <a href="#hero" className="flex min-w-0 items-center gap-3">
-            <img src={appIcon} alt="" className="h-10 w-10 rounded-lg" />
+            <img
+              src={appIcon}
+              alt="SMART RISK App-Icon"
+              className="h-10 w-10 rounded-lg"
+            />
             <span className="truncate font-serif text-xl font-semibold">
               SMART RISK
             </span>
@@ -217,7 +221,7 @@ function App() {
       >
         <img
           src={heroScreenshot}
-          alt=""
+          alt="SMART RISK Dashboard mit Projektkennzahlen und Monte-Carlo-Simulation"
           className="absolute inset-0 h-full w-full object-cover object-left-top"
         />
         <div className="absolute inset-0 bg-[#05070c]/60" />
@@ -649,7 +653,11 @@ function App() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
           <div className="mx-auto flex max-w-none flex-col items-center gap-4 lg:mx-0 lg:items-start">
             <div className="flex items-center gap-3">
-              <img src={appIcon} alt="" className="h-10 w-10 rounded-lg" />
+              <img
+                src={appIcon}
+                alt="SMART RISK App-Icon"
+                className="h-10 w-10 rounded-lg"
+              />
               <span className="whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl">
                 {appName}
               </span>
