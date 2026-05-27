@@ -32,16 +32,16 @@ const purchaseLink = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const benefits = [
   {
-    title: "Budgetrisiken sichtbar machen",
-    text: "Bandbreiten, Perzentile und Zielabweichungen statt einzelner Planwerte.",
+    titleLines: ["Budgetrisiken", "sichtbar machen"],
+    textLines: ["Bandbreiten und Perzentile", "statt einzelner Planwerte", "für klare Entscheidungen."],
   },
   {
-    title: "Entscheidungen vorbereiten",
-    text: "Risikopuffer, Szenarien und Managementaussagen nachvollziehbar ableiten.",
+    titleLines: ["Entscheidungen", "fundiert vorbereiten"],
+    textLines: ["Risikopuffer und Szenarien", "nachvollziehbar ableiten", "und sauber kommunizieren."],
   },
   {
-    title: "Lokal arbeiten",
-    text: "Projektdaten im Browser verwalten, exportieren und optional KI nutzen.",
+    titleLines: ["Lokal im Browser", "sicher arbeiten"],
+    textLines: ["Projektdaten selbst verwalten", "per Export mitnehmen", "und optional KI nutzen."],
   },
 ];
 
@@ -321,19 +321,31 @@ function App() {
             <div className="mt-10 grid max-w-5xl gap-4 sm:grid-cols-3">
               {benefits.map((benefit) => (
                 <div
-                  key={benefit.title}
-                  className="rounded-xl border border-white/18 bg-white/[0.14] px-5 py-5 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                  key={benefit.titleLines.join(" ")}
+                  className="flex min-h-[210px] flex-col items-center rounded-xl border border-white/18 bg-white/[0.14] px-5 py-5 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-md"
                 >
                   <Check
                     className="mx-auto mb-4 h-6 w-6 text-[#9edbbf]"
                     strokeWidth={3}
                     aria-hidden="true"
                   />
-                  <h3 className="text-lg font-extrabold leading-6">
-                    {benefit.title}
+                  <h3 className="grid min-h-12 place-items-center text-lg font-extrabold leading-6">
+                    <span>
+                      {benefit.titleLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </h3>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-white/74">
-                    {benefit.text}
+                  <p className="mt-3 grid min-h-[4.5rem] place-items-center text-sm font-semibold leading-6 text-white/74">
+                    <span>
+                      {benefit.textLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </p>
                 </div>
               ))}
