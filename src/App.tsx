@@ -162,6 +162,33 @@ const audiences = [
   "Selbstständige und kleine Teams",
 ];
 
+const audienceGroups = [
+  {
+    icon: Target,
+    label: "Bau & Projektsteuerung",
+    title: "Für Projekte mit belastbaren Budgetentscheidungen.",
+    text: "Projektsteuerer, Bauherrenvertretungen und Projektleitungen bewerten Kosten-, Termin- und Risikobandbreiten strukturiert statt nur mit Einzelwerten.",
+  },
+  {
+    icon: LineChart,
+    label: "Immobilien & Investment",
+    title: "Für Vorhaben mit CAPEX-, Ertrags- und Szenariorisiken.",
+    text: "Immobilienentwickler, Investoren und Controller prüfen Annahmen, Zielbudgets und Risikopuffer für nachvollziehbare Freigabeentscheidungen.",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Risikomanagement",
+    title: "Für Teams, die Unsicherheit transparent machen.",
+    text: "Risikomanager und Consultants übersetzen Eingangsannahmen in Perzentile, Sensitivitäten und Managementaussagen.",
+  },
+  {
+    icon: Laptop,
+    label: "Kleine Teams & Experten",
+    title: "Für fokussiertes Arbeiten ohne Cloud-Komplexität.",
+    text: "Selbstständige, Fachplaner und kleine Teams arbeiten browserbasiert, lokal speichernd und mit kontrollierbaren Export-Workflows.",
+  },
+];
+
 const faqs = [
   {
     question: "Ist die App browserbasiert?",
@@ -928,22 +955,59 @@ function App() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-            Zielgruppe
-          </p>
-          <h2 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-            Für Projekte, bei denen Unsicherheit entscheidungsrelevant ist.
-          </h2>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {audiences.map((item) => (
-              <div
-                key={item}
-                className="rounded-md border border-ink/10 bg-white p-5 text-graphite"
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+                Zielgruppe
+              </p>
+              <h2 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+                Für Entscheidungen, bei denen Unsicherheit nicht verdeckt
+                bleiben darf.
+              </h2>
+            </div>
+            <p className="max-w-3xl text-lg leading-8 text-graphite">
+              SMART RISK ist für professionelle Nutzer konzipiert, die
+              Projektannahmen plausibilisieren, Risikoauswirkungen beziffern
+              und Managemententscheidungen mit klaren Kennzahlen vorbereiten.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 lg:grid-cols-4">
+            {audienceGroups.map(({ icon: Icon, label, title, text }) => (
+              <article
+                key={label}
+                className="flex min-h-[300px] flex-col rounded-md border border-ink/10 bg-white p-6 shadow-[0_14px_36px_rgba(16,31,53,0.05)]"
               >
-                {item}
-              </div>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-sage/20 bg-[#e9f1f8] text-sage">
+                    <Icon className="h-6 w-6" strokeWidth={2.1} />
+                  </div>
+                  <p className="text-right text-xs font-bold uppercase tracking-[0.14em] text-gold">
+                    {label}
+                  </p>
+                </div>
+                <h3 className="mt-8 text-xl font-extrabold leading-7 text-ink">
+                  {title}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-graphite">
+                  {text}
+                </p>
+              </article>
             ))}
+          </div>
+
+          <div className="mt-5 rounded-md border border-ink/10 bg-ivory p-5">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {audiences.map((item) => (
+                <div
+                  key={item}
+                  className="flex min-h-[54px] items-center justify-center rounded-md border border-ink/10 bg-white px-4 py-3 text-center text-sm font-bold leading-5 text-ink"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
