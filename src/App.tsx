@@ -1013,29 +1013,28 @@ function App() {
         </div>
       </section>
 
-      <footer className="w-full border-t border-ink/10 bg-ivory">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-16 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 lg:mx-0 lg:items-start">
-            <div className="flex items-center gap-3">
-              <img
-                src={appIcon}
-                alt="SMART RISK App-Icon"
-                className="h-10 w-10 rounded-lg"
-              />
-              <span className="whitespace-nowrap font-serif text-xl font-semibold sm:text-2xl">
+      <footer className="w-full border-t border-ink/15 bg-ivory">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-5 text-center sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+          <div className="mx-auto flex items-center gap-3 lg:mx-0">
+            <img
+              src={appIcon}
+              alt="SMART RISK App-Icon"
+              className="h-11 w-11 rounded-lg"
+            />
+            <div>
+              <p className="text-[0.68rem] font-extrabold uppercase leading-4 tracking-[0.18em] text-graphite">
+                SmartBuilt-AI
+              </p>
+              <p className="text-base font-extrabold leading-5 text-ink sm:text-lg">
                 {appName}
-              </span>
+              </p>
             </div>
-            <p className="max-w-xl text-sm leading-7 text-graphite sm:text-base">
-              Monte-Carlo-gestützte Risiko- und Szenarioanalyse für belastbare
-              Projekt- und Budgetentscheidungen.
-            </p>
           </div>
-          <div className="text-sm leading-7 text-graphite lg:text-right">
-            <p className="font-medium text-ink">
+          <div className="text-sm font-semibold leading-6 text-graphite lg:text-right">
+            <p>
               © 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger
             </p>
-            <div className="mt-3 flex flex-wrap justify-center gap-x-2 gap-y-1 lg:justify-end">
+            <div className="mt-1 flex flex-wrap justify-center gap-x-2 gap-y-1 lg:justify-end">
               <a href="https://www.built-smart-hub.com/impressum">Impressum</a>
               <span aria-hidden="true">|</span>
               <a href="https://www.built-smart-hub.com/datenschutz">
