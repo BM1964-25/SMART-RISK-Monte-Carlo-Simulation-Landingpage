@@ -375,7 +375,7 @@ function App() {
               {["P50 / P80 / P90", "Risikopuffer", "Sensitivität"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-md border border-ink/10 bg-white px-4 py-3 text-sm font-semibold text-ink"
+                  className="grid min-h-[54px] place-items-center rounded-md border border-ink/10 bg-white px-4 py-3 text-center text-sm font-extrabold text-ink"
                 >
                   {item}
                 </div>
