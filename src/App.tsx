@@ -322,10 +322,10 @@ function App() {
               {benefits.map((benefit) => (
                 <div
                   key={benefit.title}
-                  className="rounded-xl border border-white/18 bg-white/[0.14] px-5 py-5 text-left text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                  className="rounded-xl border border-white/18 bg-white/[0.14] px-5 py-5 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-md"
                 >
                   <Check
-                    className="mb-4 h-6 w-6 text-[#9edbbf]"
+                    className="mx-auto mb-4 h-6 w-6 text-[#9edbbf]"
                     strokeWidth={3}
                     aria-hidden="true"
                   />
