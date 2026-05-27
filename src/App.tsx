@@ -452,13 +452,14 @@ function App() {
 
       <section id="features" className="bg-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
                 Funktionen
               </p>
               <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-                Vom Risikomodell bis zur Entscheidungsvorlage.
+                <span className="block">Vom Risikomodell</span>
+                <span className="block">bis zur Entscheidungsvorlage.</span>
               </h2>
             </div>
             <p className="max-w-3xl text-lg leading-8 text-graphite">
