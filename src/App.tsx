@@ -729,13 +729,15 @@ function App() {
       </section>
 
       <section className="bg-ivory">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               KI-Assistenz
             </p>
             <h2 className="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Optionale Unterstützung für Struktur, Sprache und Interpretation.
+              <span className="block">Optionale Unterstützung</span>
+              <span className="block">für Struktur, Sprache</span>
+              <span className="block">und Interpretation.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite">
               Die Monte-Carlo-Simulation bleibt fachlich und rechnerisch lokal.
@@ -770,7 +772,7 @@ function App() {
               {aiFeatures.map(({ title, text }, index) => (
                 <article
                   key={title}
-                  className="grid gap-4 rounded-md border border-ink/10 bg-paper p-5 sm:grid-cols-[auto_1fr]"
+                  className="grid gap-4 rounded-md border border-ink/10 bg-paper p-4 sm:grid-cols-[auto_1fr]"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sage ring-1 ring-ink/10">
                     <BrainCircuit size={20} aria-hidden="true" />
