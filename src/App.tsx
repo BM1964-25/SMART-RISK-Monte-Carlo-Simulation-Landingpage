@@ -599,75 +599,23 @@ function App() {
       </section>
 
       <section id="workspace" className="border-y border-ink/10 bg-paper">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.88fr_1.12fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
-              Nutzung / Eigener Arbeitsbereich
-            </p>
-            <h2 className="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Ein persönlicher Arbeitsbereich für Risikoentscheidungen.
-            </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+                Nutzung / Eigener Arbeitsbereich
+              </p>
+              <h2 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+                Ein persönlicher Arbeitsbereich für Risikoentscheidungen.
+              </h2>
+            </div>
+            <p className="max-w-3xl text-lg leading-8 text-graphite">
               SMART RISK läuft direkt im Browser, hält lokale Projektdaten
               kontrollierbar und verbindet Bewertungsmodell, Simulation,
               Szenarien und Ergebnisanalyse in einem fokussierten Workspace.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              {["Keine Desktop-Installation", "Lokaler Browser-Speicher", "JSON- und CSV-Workflows"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-semibold text-ink"
-                  >
-                    {item}
-                  </span>
-                ),
-              )}
-            </div>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  icon: Laptop,
-                  title: "Direkt öffnen",
-                  text: "Über einen Link im Webbrowser starten und ohne separate Desktop-Installation arbeiten.",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Daten kontrollieren",
-                  text: "Projekte, Modelle und Simulationseinstellungen lokal halten, ohne automatische zentrale Cloud-Datenbank.",
-                },
-                {
-                  icon: FileJson,
-                  title: "Exportieren und übertragen",
-                  text: "Projektdaten per JSON sichern; CSV-Exporte und Vorlagen für Auswertung und Datenmanagement nutzen.",
-                },
-                {
-                  icon: LockKeyhole,
-                  title: "Persönlich lizenzieren",
-                  text: "Trial, Kauf und Lizenzprüfung können ein Konto oder E-Mail/Magic-Link-Login erfordern.",
-                },
-              ].map(({ icon: Icon, title, text }) => (
-                <div
-                  key={title}
-                  className="rounded-md border border-ink/10 bg-white p-5"
-                >
-                  <Icon className="h-6 w-6 text-sage" />
-                  <div>
-                    <h3 className="mt-4 font-semibold">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <a
-              href={appUrl}
-              className="mt-7 inline-flex items-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink transition hover:bg-paper"
-            >
-              App öffnen
-              <ChevronRight size={18} aria-hidden="true" />
-            </a>
           </div>
-          <div className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
+          <div className="mt-12 overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
             <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-4 sm:px-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
@@ -722,6 +670,60 @@ function App() {
                 />
               ))}
             </div>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Laptop,
+                title: "Direkt öffnen",
+                text: "Im Webbrowser starten, ohne separate Desktop-Installation.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Daten kontrollieren",
+                text: "Projekt- und Modelldaten lokal halten, ohne zentrale Cloud-Datenbank.",
+              },
+              {
+                icon: FileJson,
+                title: "Exportieren",
+                text: "Projektdaten per JSON sichern und Ergebnisse per CSV weitergeben.",
+              },
+              {
+                icon: LockKeyhole,
+                title: "Persönlich lizenzieren",
+                text: "Trial, Kauf und Lizenzprüfung über persönlichen Nutzerzugriff.",
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-md border border-ink/10 bg-white p-5"
+              >
+                <Icon className="h-6 w-6 text-sage" />
+                <h3 className="mt-4 font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap gap-3">
+              {["Keine Desktop-Installation", "Lokaler Browser-Speicher", "JSON- und CSV-Workflows"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-semibold text-ink"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+            <a
+              href={appUrl}
+              className="inline-flex items-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink transition hover:bg-ivory"
+            >
+              App öffnen
+              <ChevronRight size={18} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
