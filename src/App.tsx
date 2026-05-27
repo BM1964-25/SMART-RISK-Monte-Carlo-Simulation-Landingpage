@@ -973,36 +973,39 @@ function App() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {audienceGroups.map(({ icon: Icon, label, title, text }) => (
               <article
                 key={label}
-                className="flex min-h-[300px] flex-col rounded-md border border-ink/10 bg-white p-6 shadow-[0_14px_36px_rgba(16,31,53,0.05)]"
+                className="rounded-md border border-ink/10 bg-white p-7 shadow-[0_14px_36px_rgba(16,31,53,0.05)]"
               >
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-sage/20 bg-[#e9f1f8] text-sage">
                     <Icon className="h-6 w-6" strokeWidth={2.1} />
                   </div>
-                  <p className="text-right text-xs font-bold uppercase tracking-[0.14em] text-gold">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">
                     {label}
                   </p>
                 </div>
-                <h3 className="mt-8 text-xl font-extrabold leading-7 text-ink">
+                <h3 className="mt-7 max-w-xl text-2xl font-extrabold leading-8 text-ink">
                   {title}
                 </h3>
-                <p className="mt-4 text-base leading-8 text-graphite">
+                <p className="mt-4 max-w-2xl text-base leading-8 text-graphite">
                   {text}
                 </p>
               </article>
             ))}
           </div>
 
-          <div className="mt-5 rounded-md border border-ink/10 bg-ivory p-5">
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 rounded-md border border-ink/10 bg-ivory px-5 py-6">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.16em] text-gold">
+              Geeignet für
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
               {audiences.map((item) => (
                 <div
                   key={item}
-                  className="flex min-h-[54px] items-center justify-center rounded-md border border-ink/10 bg-white px-4 py-3 text-center text-sm font-bold leading-5 text-ink"
+                  className="rounded-full border border-ink/10 bg-white px-5 py-2.5 text-center text-sm font-bold leading-5 text-ink"
                 >
                   {item}
                 </div>
