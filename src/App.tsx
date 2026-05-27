@@ -358,29 +358,65 @@ function App() {
       </section>
 
       <section className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.84fr_1.16fr]">
-          <div>
+        <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr]">
+          <div className="lg:sticky lg:top-28">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               Problem und Nutzen
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Risiken brauchen mehr als Einzelwerte und Bauchgefühl.
+              Entscheidungen unter Unsicherheit brauchen mehr als einen Einzelwert.
             </h2>
+            <p className="mt-6 text-lg leading-8 text-graphite">
+              Projektbudgets werden oft mit festen Zahlen geplant. SMART RISK
+              zeigt, wie stabil diese Annahmen wirklich sind und welche
+              Bandbreiten für Budget, Risiko und Gegensteuerung relevant werden.
+            </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              "Klassische Tabellen zeigen häufig nur Planwerte, aber nicht die Bandbreite möglicher Ergebnisse.",
-              "Monte-Carlo-Simulationen machen Unsicherheit als Verteilung sichtbar und entscheidbar.",
-              "P80, P90, Überschreitungswahrscheinlichkeiten und Sensitivitäten schaffen eine belastbare Managementsprache.",
-              "Optionale KI-Assistenz hilft, Ergebnisse, Treiber und Gegenmaßnahmen schneller zu formulieren und zu strukturieren.",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-md border border-ink/10 bg-white p-6 text-base leading-7 text-graphite shadow-sm"
-              >
-                {item}
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
+            <div className="grid gap-4 lg:grid-cols-3">
+              {[
+                {
+                  label: "Ausgangslage",
+                  title: "Planwerte allein reichen nicht",
+                  text: "Feste Budgets verdecken, wie stark Kosten, Termine und Annahmen in der Praxis schwanken können.",
+                },
+                {
+                  label: "Analyse",
+                  title: "Unsicherheit wird messbar",
+                  text: "Monte-Carlo-Simulationen übersetzen Bandbreiten in Verteilungen, Perzentile und Überschreitungswahrscheinlichkeiten.",
+                },
+                {
+                  label: "Entscheidung",
+                  title: "Managementaussagen werden belastbar",
+                  text: "P80, P90, Sensitivitäten und Risikopuffer schaffen eine Sprache für Freigabe, Nachschärfung und Gegensteuerung.",
+                },
+              ].map(({ label, title, text }) => (
+                <article
+                  key={title}
+                  className="rounded-md border border-ink/10 bg-paper p-5"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                    {label}
+                  </p>
+                  <h3 className="mt-4 text-xl font-semibold leading-7">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-graphite">
+                    {text}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-5 grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-5 sm:grid-cols-[auto_1fr] sm:items-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage text-white">
+                <Target size={22} aria-hidden="true" />
               </div>
-            ))}
+              <p className="text-base font-semibold leading-7 text-ink">
+                Ergebnis: Aus Annahmen werden nachvollziehbare
+                Entscheidungsvorlagen für Bau, Immobilien und Projektsteuerung,
+                ohne die fachliche Freigabe aus der Hand zu geben.
+              </p>
+            </div>
           </div>
         </div>
       </section>
