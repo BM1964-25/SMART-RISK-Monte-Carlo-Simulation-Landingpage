@@ -1079,7 +1079,7 @@ function App() {
       </section>
 
       <footer className="w-full border-t border-ink/10 bg-ivory">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-14 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-16 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 lg:mx-0 lg:items-start">
             <div className="flex items-center gap-3">
               <img
@@ -1097,16 +1097,6 @@ function App() {
             </p>
           </div>
           <div className="text-sm leading-7 text-graphite lg:text-right">
-            <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-end">
-              {["P50 / P80", "Budget & Termin", "Risiko-Puffer"].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-ink/10 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-ink"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
             <p className="font-medium text-ink">
               © 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger
             </p>
