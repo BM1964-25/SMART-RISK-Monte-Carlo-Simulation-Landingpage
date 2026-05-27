@@ -288,11 +288,10 @@ function App() {
               <span className="block">Budgets besser entscheiden.</span>
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80 sm:text-xl">
-              Kosten-, Termin-, CAPEX- und Projektrisiken in Bau-, Immobilien-
-              und Projektumfeldern systematisch modellieren, simulieren und als
-              klare Managementaussage aufbereiten. Browserbasiert, lokal
-              speichernd und mit optionaler KI-Unterstützung über eigenen
-              API-Key.
+              SMART RISK macht Kosten-, Termin-, CAPEX- und Projektrisiken als
+              belastbare Szenarien sichtbar. Für Bau, Immobilien und
+              Projektsteuerung: browserbasiert, lokal speichernd und optional
+              mit KI-Assistenz über eigenen API-Key.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm font-semibold text-white/82">
               {["Monte-Carlo-Simulation", "599 € pro Jahr", "3 Tage testen"].map(
