@@ -31,9 +31,18 @@ const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
 const purchaseLink = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const benefits = [
-  "Budgetrisiken probabilistisch bewerten und Bandbreiten sichtbar machen.",
-  "Optionale KI-Assistenz für Formeln und Berichtstexte nutzen.",
-  "Lokal im Browser arbeiten und Projektdaten selbst verwalten.",
+  {
+    title: "Budgetrisiken sichtbar machen",
+    text: "Bandbreiten, Perzentile und Zielabweichungen statt einzelner Planwerte.",
+  },
+  {
+    title: "Entscheidungen vorbereiten",
+    text: "Risikopuffer, Szenarien und Managementaussagen nachvollziehbar ableiten.",
+  },
+  {
+    title: "Lokal arbeiten",
+    text: "Projektdaten im Browser verwalten, exportieren und optional KI nutzen.",
+  },
 ];
 
 const features = [
@@ -242,7 +251,7 @@ function App() {
 
       <section
         id="hero"
-        className="relative min-h-[640px] overflow-hidden bg-ink lg:min-h-[690px]"
+        className="relative min-h-[690px] overflow-hidden bg-ink lg:min-h-[740px]"
       >
         <img
           src={heroScreenshot}
@@ -254,57 +263,78 @@ function App() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(2,3,8,0.99) 0%, rgba(2,3,8,0.98) 24%, rgba(8,12,22,0.82) 48%, rgba(12,18,30,0.34) 100%)",
+              "linear-gradient(90deg, rgba(2,3,8,0.99) 0%, rgba(2,3,8,0.98) 26%, rgba(8,12,22,0.86) 52%, rgba(12,18,30,0.38) 100%)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/42 via-transparent to-[#05070c]/30" />
-        <div className="relative mx-auto flex min-h-[640px] max-w-7xl items-center px-5 py-12 sm:px-8 lg:min-h-[690px] lg:py-16">
-          <div className="max-w-3xl text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
-              Decision Support Tool für Risiko- und Szenarioanalyse
-            </p>
-            <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/88 backdrop-blur">
-              <Sparkles size={16} aria-hidden="true" />
-              Probabilistische Analyse mit optionaler KI-Assistenz
+        <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/34 via-transparent to-[#05070c]/42" />
+        <div className="relative mx-auto flex min-h-[690px] max-w-7xl items-center px-5 py-14 sm:px-8 lg:min-h-[740px] lg:py-[4.5rem]">
+          <div className="max-w-4xl text-white">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">
+                Decision Support Tool für Risiko- und Szenarioanalyse
+              </p>
+              <span className="rounded-full border border-white/18 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/78 backdrop-blur">
+                Für Bau, Immobilien und Projektsteuerung
+              </span>
             </div>
-            <h1 className="mt-7 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_12px_34px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 max-w-5xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_12px_34px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
               {appName}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
+            <p className="mt-6 max-w-3xl text-3xl font-extrabold leading-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.65)] sm:text-4xl">
+              Projektrisiken simulieren. Budgets besser entscheiden.
+            </p>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80 sm:text-xl">
               Kosten-, Termin-, CAPEX- und Projektrisiken in Bau-, Immobilien-
               und Projektumfeldern systematisch modellieren, simulieren und als
               klare Managementaussage aufbereiten. Browserbasiert, lokal
               speichernd und mit optionaler KI-Unterstützung über eigenen
               API-Key.
             </p>
-            <div className="mt-9 grid max-w-4xl gap-4 sm:grid-cols-2">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm font-semibold text-white/82">
+              {["Monte-Carlo-Simulation", "599 € pro Jahr", "3 Tage testen"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/14 bg-white/10 px-4 py-2 backdrop-blur"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+            <div className="mt-9 grid max-w-3xl gap-4 sm:grid-cols-2">
               <a
                 href={purchaseLink}
-                className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-bold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.32)] transition hover:-translate-y-0.5 hover:bg-white/92"
+                className="inline-flex min-h-[66px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-extrabold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-0.5 hover:bg-white/92"
               >
                 SMART RISK entdecken
                 <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
               </a>
               <a
                 href="#features"
-                className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl border border-white/38 bg-white/14 px-8 py-4 text-lg font-bold text-white shadow-[0_18px_44px_rgba(0,0,0,0.2)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/22"
+                className="inline-flex min-h-[66px] items-center justify-center gap-3 rounded-xl border border-white/34 bg-white/12 px-8 py-4 text-lg font-extrabold text-white shadow-[0_18px_44px_rgba(0,0,0,0.22)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20"
               >
                 Funktionen ansehen
                 <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
               </a>
             </div>
-            <div className="mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+            <div className="mt-10 grid max-w-5xl gap-4 sm:grid-cols-3">
               {benefits.map((benefit) => (
                 <div
-                  key={benefit}
-                  className="rounded-xl border border-white/20 bg-white/[0.16] px-5 py-6 text-center text-base font-bold leading-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.2)] backdrop-blur-md"
+                  key={benefit.title}
+                  className="rounded-xl border border-white/18 bg-white/[0.14] px-5 py-5 text-left text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_18px_42px_rgba(0,0,0,0.22)] backdrop-blur-md"
                 >
                   <Check
-                    className="mx-auto mb-3 h-6 w-6 text-[#8fd2ae]"
+                    className="mb-4 h-6 w-6 text-[#9edbbf]"
                     strokeWidth={3}
                     aria-hidden="true"
                   />
-                  {benefit}
+                  <h3 className="text-lg font-extrabold leading-6">
+                    {benefit.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-white/74">
+                    {benefit.text}
+                  </p>
                 </div>
               ))}
             </div>
