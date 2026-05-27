@@ -72,6 +72,16 @@ const features = [
     title: "Berichte vorbereiten",
     text: "Automatisch generierte Management-Zusammenfassungen mit Kennzahlen, Interpretation und Copy-Funktion nutzen.",
   },
+  {
+    icon: FileJson,
+    title: "Daten verwalten",
+    text: "Projektdaten per JSON importieren und exportieren, Simulationsergebnisse als CSV sichern und Datenvorlagen für Parameter und Risiken nutzen.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Optionale KI-Assistenz nutzen",
+    text: "Formelvorschläge, Risikoideen, Szenarien, Ergebnisinterpretationen und Berichtstexte mit eigenem Anthropic API-Key vorbereiten.",
+  },
 ];
 
 const workspaceSlides = [
