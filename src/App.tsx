@@ -49,17 +49,38 @@ const features = [
   {
     icon: KeyRound,
     title: "Bewertungsmodelle strukturieren",
+    titleLines: ["Bewertungsmodelle", "strukturieren"],
     text: "Fachliche Formelvorlagen nutzen, eigene Formeln erstellen, Parameter beziffern und Sofortergebnisse vor der Simulation prüfen.",
+    textLines: [
+      "Fachliche Formelvorlagen nutzen",
+      "eigene Formeln erstellen",
+      "Parameter sauber beziffern",
+      "und Sofortergebnisse prüfen.",
+    ],
   },
   {
     icon: SlidersHorizontal,
     title: "Unsicherheiten modellieren",
+    titleLines: ["Unsicherheiten", "modellieren"],
     text: "Bandbreiten mit Mindestwert, wahrscheinlichstem Wert und Maximalwert sowie Verteilungen wie Dreieck, Gleichverteilung, Normalverteilung und Beta-PERT strukturieren.",
+    textLines: [
+      "Bandbreiten realistisch erfassen",
+      "Min, wahrscheinlich und Max",
+      "mit passenden Verteilungen",
+      "simulationsfähig strukturieren.",
+    ],
   },
   {
     icon: Gauge,
     title: "Monte-Carlo-Simulation durchführen",
+    titleLines: ["Monte-Carlo-Simulation", "durchführen"],
     text: "1.000 bis 50.000 Läufe simulieren und Ergebnisräume mit P10, P50, P80, P90 und P95 belastbar sichtbar machen.",
+    textLines: [
+      "1.000 bis 50.000 Läufe",
+      "für belastbare Ergebnisräume",
+      "mit P10, P50, P80 und P90",
+      "sichtbar auswerten.",
+    ],
   },
   {
     icon: BarChart3,
@@ -469,7 +490,7 @@ function App() {
             </p>
           </div>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {features.slice(0, 3).map(({ icon: Icon, title, text }, index) => (
+            {features.slice(0, 3).map(({ icon: Icon, title, text, titleLines, textLines }, index) => (
               <article
                 key={title}
                 className="rounded-md border border-ink/10 bg-white p-7 shadow-sm"
@@ -480,10 +501,20 @@ function App() {
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="mt-7 text-2xl font-semibold leading-8">
-                  {title}
+                <h3 className="mt-7 min-h-16 text-2xl font-semibold leading-8">
+                  {(titleLines ?? [title]).map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
                 </h3>
-                <p className="mt-4 leading-8 text-graphite">{text}</p>
+                <p className="mt-4 min-h-32 leading-8 text-graphite">
+                  {(textLines ?? [text]).map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </p>
               </article>
             ))}
           </div>
