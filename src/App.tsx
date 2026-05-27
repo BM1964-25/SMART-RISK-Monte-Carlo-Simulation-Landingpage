@@ -554,7 +554,8 @@ function App() {
               Qualität vor Simulation
             </p>
             <h2 className="mt-4 max-w-xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Erst prüfen. Dann simulieren.
+              <span className="block">Erst prüfen.</span>
+              <span className="block">Dann simulieren.</span>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/72">
               SMART RISK trennt Bewertungslogik, Beispielprojekt und Simulation
