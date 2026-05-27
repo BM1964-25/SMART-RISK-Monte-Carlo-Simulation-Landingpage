@@ -405,7 +405,7 @@ function App() {
                   key={title}
                   className="grid gap-5 rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:grid-cols-[8.5rem_1fr] sm:items-center"
                 >
-                  <div className="flex items-center gap-3 sm:block">
+                  <div className="flex flex-col items-center justify-center gap-3 text-center">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-paper text-sm font-bold text-sage ring-1 ring-ink/10">
                       {label === "Ausgangslage"
                         ? "1"
@@ -413,7 +413,7 @@ function App() {
                           ? "2"
                           : "3"}
                     </span>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold sm:mt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
                       {label}
                     </p>
                   </div>
@@ -428,9 +428,11 @@ function App() {
                 </article>
               ))}
             </div>
-            <div className="grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-5 shadow-sm sm:grid-cols-[auto_1fr] sm:items-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage text-white">
-                <Target size={22} aria-hidden="true" />
+            <div className="grid gap-5 rounded-md border border-sage/20 bg-[#e8f0fa] p-5 shadow-sm sm:grid-cols-[8.5rem_1fr] sm:items-center">
+              <div className="flex items-center justify-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage text-white">
+                  <Target size={22} aria-hidden="true" />
+                </div>
               </div>
               <p className="text-base font-semibold leading-7 text-ink">
                 <span className="block">
