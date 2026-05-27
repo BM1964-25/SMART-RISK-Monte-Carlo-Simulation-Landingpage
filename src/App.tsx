@@ -547,29 +547,53 @@ function App() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-16 sm:px-8 lg:grid-cols-2">
-          {[
-            {
-              icon: Target,
-              title: "Bewertungslogik vor der Simulation prüfen",
-              text: "Fachliche Formelbibliothek, eigene Formeln, Formelgenerator und Formelprüfung helfen, die Logik nachvollziehbar aufzubauen, bevor Werte als Unsicherheiten in die Simulation übergehen.",
-            },
-            {
-              icon: LineChart,
-              title: "Demo-Daten für schnellen Einstieg",
-              text: "Beispieldaten zeigen den Workflow vom Bewertungsmodell über Parameter und Szenarien bis zur Ergebnisanalyse. Das eignet sich für Produktdemo, Schulung und erste Orientierung.",
-            },
-          ].map(({ icon: Icon, title, text }) => (
-            <article
-              key={title}
-              className="rounded-md border border-ink/10 bg-white p-7 shadow-sm"
-            >
-              <Icon className="h-8 w-8 text-sage" aria-hidden="true" />
-              <h2 className="mt-5 text-2xl font-semibold">{title}</h2>
-              <p className="mt-4 leading-8 text-graphite">{text}</p>
-            </article>
-          ))}
+      <section className="bg-[#07182c] text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9edbbf]">
+              Qualität vor Simulation
+            </p>
+            <h2 className="mt-4 max-w-xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Erst prüfen. Dann simulieren.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/72">
+              SMART RISK trennt Bewertungslogik, Beispielprojekt und Simulation
+              bewusst. So entstehen nachvollziehbare Ergebnisse statt
+              unkontrollierter Zahlenläufe.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {[
+              {
+                icon: Target,
+                label: "01",
+                title: "Bewertungslogik fachlich absichern",
+                text: "Formelvorlagen, eigene Formeln, Parameter und Sofortergebnisse werden geprüft, bevor Werte als Unsicherheiten in die Simulation übergehen.",
+              },
+              {
+                icon: LineChart,
+                label: "02",
+                title: "Mit Demo-Daten schneller verstehen",
+                text: "Beispieldaten zeigen den kompletten Ablauf vom Bewertungsmodell über Szenarien bis zur Ergebnisanalyse. Ideal für Produktdemo, Schulung und Einstieg.",
+              },
+            ].map(({ icon: Icon, label, title, text }) => (
+              <article
+                key={title}
+                className="grid gap-5 rounded-md border border-white/14 bg-white/[0.08] p-6 backdrop-blur sm:grid-cols-[auto_1fr_auto] sm:items-start"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-[#9edbbf] ring-1 ring-white/14">
+                  <Icon size={24} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold leading-8">{title}</h3>
+                  <p className="mt-3 max-w-3xl leading-8 text-white/72">
+                    {text}
+                  </p>
+                </div>
+                <span className="text-sm font-bold text-white/45">{label}</span>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
