@@ -691,9 +691,9 @@ function App() {
         </div>
       </section>
 
-      <footer className="border-t border-ink/10 bg-ivory">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
-          <div className="mx-auto flex max-w-none flex-col items-center gap-4 lg:mx-0 lg:items-start">
+      <footer className="w-full border-t border-ink/10 bg-ivory">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-14 text-center sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:text-left">
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 lg:mx-0 lg:items-start">
             <div className="flex items-center gap-3">
               <img
                 src={appIcon}
@@ -704,21 +704,24 @@ function App() {
                 {appName}
               </span>
             </div>
-            <p className="whitespace-nowrap text-sm leading-7 text-graphite sm:text-base">
-              Probabilistische Risiko- und Szenarioanalyse für belastbare Projektentscheidungen.
+            <p className="max-w-xl text-sm leading-7 text-graphite sm:text-base">
+              Monte-Carlo-gestützte Risiko- und Szenarioanalyse für belastbare
+              Projekt- und Budgetentscheidungen.
             </p>
           </div>
-          <div className="text-sm text-graphite">
+          <div className="text-sm leading-7 text-graphite lg:text-right">
             <p className="font-medium text-ink">
-              © 2026 SmartBuilt-AI · powered by BuiltSmart Hub - Bernhard
-              Metzger
+              © 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-end">
+            <div className="mt-3 flex flex-wrap justify-center gap-x-2 gap-y-1 lg:justify-end">
               <a href="https://www.built-smart-hub.com/impressum">Impressum</a>
+              <span aria-hidden="true">|</span>
               <a href="https://www.built-smart-hub.com/datenschutz">
                 Datenschutz
               </a>
+              <span aria-hidden="true">|</span>
               <a href="https://www.built-smart-hub.com/agb">AGB</a>
+              <span aria-hidden="true">|</span>
               <a href="https://www.built-smart-hub.com/widerrufsbelehrung">
                 Widerrufsbelehrung
               </a>
