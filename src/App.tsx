@@ -728,56 +728,69 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <div className="max-w-4xl">
+      <section className="bg-ivory">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               KI-Assistenz
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Optionale API-Unterstützung für Formeln, Risikoideen, Szenarien und Berichtstexte.
+            <h2 className="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              Optionale Unterstützung für Struktur, Sprache und Interpretation.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-graphite">
-              Die Simulation bleibt fachlich und rechnerisch lokal. Die
-              KI-Assistenz unterstützt dort, wo Formulierungen, Strukturierung
-              und Interpretation Zeit sparen. Für diese optionale Nutzung ist
-              ein eigener Anthropic API-Key erforderlich.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite">
+              Die Monte-Carlo-Simulation bleibt fachlich und rechnerisch lokal.
+              Die KI-Assistenz greift dort, wo Entwürfe, Formulierungen und
+              Erklärungen schneller belastbar vorbereitet werden sollen.
             </p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {["Optional nutzbar", "Eigener Anthropic API-Key"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-md border border-ink/10 bg-white px-4 py-3 text-center text-sm font-extrabold text-ink"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mt-10 rounded-md border border-ink/10 bg-white p-6 shadow-sm">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
+            <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h3 className="text-xl font-semibold">
-                  Was die KI-Assistenz leistet
-                </h3>
-                <p className="mt-2 max-w-3xl text-base leading-7 text-graphite">
-                  Die Simulation bleibt fachlich und rechnerisch lokal. Die KI
-                  unterstützt dort, wo Formulierungen, Strukturierung und
-                  Interpretation Zeit sparen.
+                <h3 className="text-2xl font-semibold">Assistenzfelder</h3>
+                <p className="mt-2 text-base leading-7 text-graphite">
+                  Für vorbereitende Arbeit, nicht als Ersatz für Prüfung und
+                  Freigabe.
                 </p>
               </div>
-              <span className="inline-flex w-fit items-center rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-sm font-semibold text-graphite">
+              <span className="inline-flex w-fit items-center rounded-full bg-paper px-4 py-2 text-sm font-semibold text-graphite">
                 Optional
               </span>
             </div>
-            <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-              {aiFeatures.map(({ title, text }) => (
-              <div
-                key={title}
-                className="rounded-md border border-ink/10 bg-paper p-4"
-              >
-                <BrainCircuit className="h-5 w-5 text-gold" />
-                <h4 className="mt-3 font-semibold">{title}</h4>
-                <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
-              </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {aiFeatures.map(({ title, text }, index) => (
+                <article
+                  key={title}
+                  className="grid gap-4 rounded-md border border-ink/10 bg-paper p-5 sm:grid-cols-[auto_1fr]"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sage ring-1 ring-ink/10">
+                    <BrainCircuit size={20} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">
+                      0{index + 1}
+                    </p>
+                    <h4 className="mt-2 font-semibold">{title}</h4>
+                    <p className="mt-2 text-sm leading-6 text-graphite">{text}</p>
+                  </div>
+                </article>
               ))}
             </div>
-            <p className="mt-5 rounded-md bg-[#e8f0fa] px-5 py-4 leading-7 text-ink">
-              Die KI bringt Mehrwert, wenn du schneller zu einem strukturierten
-              Entwurf, einer besseren Ergebnisinterpretation oder klareren
-              Berichtstexten kommen möchtest. Simulation, Plausibilisierung und
-              fachliche Freigabe bleiben weiterhin bewusst beim Nutzer.
-            </p>
+            <div className="mt-5 rounded-md border border-sage/20 bg-[#e8f0fa] px-5 py-4">
+              <p className="text-base font-semibold leading-7 text-ink">
+                Simulation, Plausibilisierung und fachliche Freigabe bleiben
+                bewusst beim Nutzer.
+              </p>
+            </div>
           </div>
         </div>
       </section>
