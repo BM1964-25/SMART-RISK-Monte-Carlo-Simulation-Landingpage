@@ -358,15 +358,15 @@ function App() {
       </section>
 
       <section className="border-y border-ink/10 bg-ivory">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 py-18 sm:px-8 lg:grid-cols-[0.86fr_1.14fr] lg:py-20">
           <div className="lg:sticky lg:top-28">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
               Problem und Nutzen
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+            <h2 className="mt-4 max-w-xl font-serif text-4xl font-semibold leading-tight sm:text-[2.8rem]">
               Entscheidungen unter Unsicherheit brauchen mehr als einen Einzelwert.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-graphite">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-graphite">
               Projektbudgets werden oft mit festen Zahlen geplant. SMART RISK
               zeigt, wie stabil diese Annahmen wirklich sind und welche
               Bandbreiten für Budget, Risiko und Gegensteuerung relevant werden.
@@ -423,9 +423,15 @@ function App() {
                 <Target size={22} aria-hidden="true" />
               </div>
               <p className="text-lg font-semibold leading-8 text-ink">
-                Ergebnis: Aus Annahmen werden nachvollziehbare
-                Entscheidungsvorlagen für Bau, Immobilien und Projektsteuerung,
-                ohne die fachliche Freigabe aus der Hand zu geben.
+                <span className="block">
+                  Ergebnis: Aus Annahmen werden nachvollziehbare Entscheidungsvorlagen.
+                </span>
+                <span className="block">
+                  Für Bau, Immobilien und Projektsteuerung.
+                </span>
+                <span className="block">
+                  Ohne die fachliche Freigabe aus der Hand zu geben.
+                </span>
               </p>
             </div>
           </div>
