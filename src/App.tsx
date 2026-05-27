@@ -371,8 +371,18 @@ function App() {
               zeigt, wie stabil diese Annahmen wirklich sind und welche
               Bandbreiten für Budget, Risiko und Gegensteuerung relevant werden.
             </p>
+            <div className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
+              {["P50 / P80 / P90", "Risikopuffer", "Sensitivität"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-md border border-ink/10 bg-white px-4 py-3 text-sm font-semibold text-ink"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
+          <div className="grid gap-4">
             <div className="grid gap-4">
               {[
                 {
@@ -393,10 +403,10 @@ function App() {
               ].map(({ label, title, text }) => (
                 <article
                   key={title}
-                  className="grid gap-5 rounded-md border border-ink/10 bg-paper p-5 sm:grid-cols-[9rem_1fr] sm:items-start"
+                  className="grid gap-5 rounded-md border border-ink/10 bg-white p-5 shadow-sm sm:grid-cols-[8.5rem_1fr] sm:items-center"
                 >
                   <div className="flex items-center gap-3 sm:block">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-sage ring-1 ring-ink/10">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-paper text-sm font-bold text-sage ring-1 ring-ink/10">
                       {label === "Ausgangslage"
                         ? "1"
                         : label === "Analyse"
@@ -408,21 +418,21 @@ function App() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold leading-8">
+                    <h3 className="text-xl font-semibold leading-7">
                       {title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-base leading-8 text-graphite">
+                    <p className="mt-2 max-w-2xl text-base leading-7 text-graphite">
                       {text}
                     </p>
                   </div>
                 </article>
               ))}
             </div>
-            <div className="mt-5 grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-6 sm:grid-cols-[auto_1fr] sm:items-center">
+            <div className="grid gap-4 rounded-md border border-sage/20 bg-[#e8f0fa] p-5 shadow-sm sm:grid-cols-[auto_1fr] sm:items-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage text-white">
                 <Target size={22} aria-hidden="true" />
               </div>
-              <p className="text-lg font-semibold leading-8 text-ink">
+              <p className="text-base font-semibold leading-7 text-ink">
                 <span className="block">
                   Ergebnis: Aus Annahmen werden nachvollziehbare Entscheidungsvorlagen.
                 </span>
