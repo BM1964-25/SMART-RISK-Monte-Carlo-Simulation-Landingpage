@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
 import workspaceCurrent from "./assets/smart-risk-workspace-current.png";
-import appIcon from "./assets/smart-risk-icon.jpeg";
+import appIcon from "./assets/smart-risk-icon.png";
 
 const appName = "SMART RISK Monte-Carlo-Simulation";
 const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
