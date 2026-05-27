@@ -203,7 +203,7 @@ function App() {
               className="h-10 w-10 rounded-lg"
             />
             <span className="truncate font-serif text-xl font-semibold">
-              SMART RISK
+              {appName}
             </span>
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-graphite md:flex">
@@ -211,7 +211,7 @@ function App() {
               Funktionen
             </a>
             <a className="hover:text-ink" href="#workspace">
-              Konto
+              App
             </a>
             <a className="hover:text-ink" href="#license">
               Lizenz
@@ -710,6 +710,16 @@ function App() {
             </p>
           </div>
           <div className="text-sm leading-7 text-graphite lg:text-right">
+            <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-end">
+              {["P50 / P80", "Budget & Termin", "Risiko-Puffer"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-ink/10 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-ink"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
             <p className="font-medium text-ink">
               © 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger
             </p>
