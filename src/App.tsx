@@ -798,32 +798,49 @@ function App() {
       </section>
 
       <section id="license" className="bg-[#07182c] text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.94fr_1.06fr] lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:py-24">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.08em] text-white/70">
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#9edbbf]">
               Lizenzmodell
             </p>
-            <h2 className="mt-5 max-w-2xl text-5xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-6xl">
-              Eine professionelle Jahreslizenz für belastbare Risikoentscheidungen.
+            <h2 className="mt-5 max-w-2xl text-5xl font-extrabold leading-[1.04] tracking-normal text-white sm:text-6xl">
+              Professionelle Risikoanalyse.
+              <span className="block">Klar lizenziert.</span>
             </h2>
             <p className="mt-7 max-w-2xl text-lg font-semibold leading-8 text-white/72">
-              Für Anwender, die Projekt-, Kosten-, Termin- und CAPEX-Risiken
-              regelmäßig simulieren und dabei Browser-Speicherung, Export und
-              Import sauber nutzen möchten.
+              SMART RISK richtet sich an Anwender, die Kosten-, Termin-,
+              CAPEX- und Projektrisiken regelmäßig als belastbare Szenarien
+              bewerten und Ergebnisse nachvollziehbar weitergeben möchten.
             </p>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-white/86">
               Pro Lizenz ist ein persönlicher Nutzerzugriff vorgesehen. Mehrere
               Lizenzen bedeuten mehrere getrennte Nutzerzugriffe, keinen
               gemeinsamen Cloud-Arbeitsbereich.
             </p>
+            <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-2">
+              {[
+                "Monte-Carlo-Simulation mit Perzentilen",
+                "Bewertungsmodelle und eigene Formeln",
+                "Szenarien, Sensitivität und Bericht",
+                "JSON- und CSV-Workflows",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 rounded-md border border-white/12 bg-white/[0.06] p-4 text-sm font-bold leading-6 text-white/82"
+                >
+                  <Check className="mt-0.5 h-5 w-5 flex-none text-[#9edbbf]" strokeWidth={2.6} />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="w-full max-w-[620px] justify-self-end rounded-lg border border-white/22 bg-white/12 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-8">
+          <div className="w-full max-w-[640px] justify-self-end rounded-lg border border-white/22 bg-white/13 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-8">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="text-sm font-extrabold uppercase tracking-normal text-white/70">
+                <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-white/70">
                   Professional
                 </p>
-                <h3 className="mt-2 text-[2.45rem] font-extrabold leading-none tracking-normal text-white">
+                <h3 className="mt-2 text-[2.55rem] font-extrabold leading-none tracking-normal text-white">
                   Jahreslizenz
                 </h3>
               </div>
@@ -844,7 +861,7 @@ function App() {
                 Entspricht 49,92 € netto / 59,40 € brutto pro Monat
               </p>
             </div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
               {[
                 ["12 Monate", "Laufzeit"],
                 ["3 Tage", "testen"],
@@ -859,15 +876,15 @@ function App() {
                   </div>
               ))}
             </div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
               {[
                 ["Verlängerung", "Automatisch um 12 Monate"],
                 ["Kündigung", "1 Monat vor Ablauf"],
-                ["Zahlung", "Sicherer Online-Zahlung"],
+                ["Zahlung", "Sicherer Online-Zahlungsprozess"],
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex min-h-[110px] flex-col items-center justify-center rounded-md border border-white/14 bg-[#20324a]/72 p-4 text-center"
+                  className="flex min-h-[116px] flex-col items-center justify-center rounded-md border border-white/14 bg-[#20324a]/72 p-4 text-center"
                 >
                   <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
                     {label}
@@ -878,13 +895,23 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-5 text-center">
-              <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
-                Optionale KI-Nutzung
-              </p>
-              <p className="mt-1 text-lg font-semibold leading-7 text-white/90">
-                Eigener Anthropic API-Key für optionale Assistenz
-              </p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-[0.82fr_1.18fr]">
+              <div className="rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-5 text-center">
+                <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
+                  KI-Nutzung
+                </p>
+                <p className="mt-1 text-base font-bold leading-7 text-white/90">
+                  Optional
+                </p>
+              </div>
+              <div className="rounded-md border border-[#9edbbf]/20 bg-[#315068]/70 px-5 py-5 text-center">
+                <p className="text-sm font-extrabold uppercase tracking-normal text-[#9edbbf]">
+                  API-Key
+                </p>
+                <p className="mt-1 text-base font-bold leading-7 text-white/90">
+                  Eigener Anthropic API-Key erforderlich
+                </p>
+              </div>
             </div>
             <a
               href={purchaseLink}
@@ -893,8 +920,8 @@ function App() {
               Lizenz sichern
               <ChevronRight size={24} strokeWidth={2.8} aria-hidden="true" />
             </a>
-            <p className="mt-5 text-center text-base font-bold leading-7 text-white/62">
-              Jahreslizenz | sichere Zahlung | persönlicher Nutzerzugriff
+            <p className="mt-5 text-center text-base font-bold leading-7 text-white/64">
+              Jahreslizenz | sicherer Online-Zahlungsprozess | persönlicher Nutzerzugriff
             </p>
           </div>
         </div>
