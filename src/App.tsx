@@ -305,7 +305,7 @@ function App() {
                 ),
               )}
             </div>
-            <div className="mt-9 grid max-w-3xl gap-4 sm:grid-cols-2">
+            <div className="mt-9 grid max-w-5xl gap-4 sm:grid-cols-2">
               <a
                 href={purchaseLink}
                 className="inline-flex min-h-[66px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-extrabold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-0.5 hover:bg-white/92"
