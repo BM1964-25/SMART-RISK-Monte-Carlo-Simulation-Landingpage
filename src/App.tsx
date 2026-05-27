@@ -278,7 +278,8 @@ function App() {
               </span>
             </div>
             <h1 className="mt-7 max-w-5xl font-serif text-5xl font-semibold leading-[1.02] drop-shadow-[0_12px_34px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
-              {appName}
+              <span className="block">SMART RISK</span>
+              <span className="block">Monte-Carlo-Simulation</span>
             </h1>
             <p className="mt-6 max-w-3xl text-3xl font-extrabold leading-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.65)] sm:text-4xl">
               Projektrisiken simulieren. Budgets besser entscheiden.
