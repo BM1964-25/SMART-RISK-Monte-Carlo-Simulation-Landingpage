@@ -1,18 +1,22 @@
 # SMART RISK Monte-Carlo-Simulation
 
 App-Name: SMART RISK Monte-Carlo-Simulation
-Kurzbeschreibung: Browserbasierte Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse mit Monte-Carlo-Simulation, lokalem Projektspeicher und optionaler KI-Assistenz.
+Kurzbeschreibung: Browserbasierte Einzelplatz-App fuer probabilistische Risiko- und Szenarioanalyse in Bau, Immobilien, Projektsteuerung sowie Projekt- und Risikomanagement mit Monte-Carlo-Simulation, lokalem Projektspeicher, fachlichen/eigenen Bewertungsmodellen und optionaler KI-Assistenz.
 Kategorie: BusinessApplication; Risk Management Software; probabilistische Projekt-, Kosten-, Termin- und CAPEX-Risikoanalyse.
-Zielgruppe: Projektverantwortliche, Bauherren, Investoren, Projektsteuerer, Bau- und Immobilienprofis, Risikomanager, Controller, Consultants und Entscheider mit Kosten-, Termin- oder CAPEX-Risiken.
-Hauptnutzen: Unsicherheiten als Verteilungen sichtbar machen, Perzentile und Zielabweichungen auswerten, Risikotreiber erkennen und belastbare Managementaussagen vorbereiten.
+Zielgruppe: Bau, Immobilien, Projektsteuerung, Projektmanagement, Risikomanagement, Bauherren, Investoren, Immobilienentwickler, Controller, Consultants, Selbststaendige und kleine Teams.
+Hauptnutzen: Budgetrisiken und Unsicherheiten als Verteilungen sichtbar machen, Perzentile und Zielabweichungen auswerten, Risikotreiber erkennen und belastbare Managementaussagen vorbereiten.
 
 Zentrale Funktionen:
+- Fachliche Formelbibliothek und eigene Formelbibliothek.
+- Formelgenerator, Formelpruefung, Parameterbewertung und Sofortergebnis.
+- Werte als Unsicherheiten uebernehmen.
 - Unsicherheiten, Bandbreitenparameter, Ereignisbausteine und Verteilungen modellieren.
 - Monte-Carlo-Simulationen mit 1.000 bis 50.000 Laeufen durchfuehren.
 - P10, P50, P80, P90 und P95 sowie Erwartungswert, Median und Standardabweichung auswerten.
 - Histogramm, kumulative Verteilung, Budgetueberschreitungswahrscheinlichkeit und Risikopuffer-Empfehlung analysieren.
 - Sensitivitaeten, Treiber-Ranglisten und Szenarien vergleichen.
 - Management-Zusammenfassungen und Berichtsbausteine vorbereiten.
+- Demo-Daten fuer erstes Kennenlernen, Produktdemo, Schulung und Szenariovergleich nutzen.
 
 KI-Funktionen:
 - Optionale KI-Assistenz fuer Formeln, Risikoideen, Szenarien, Ergebnisinterpretation und Berichtstexte.

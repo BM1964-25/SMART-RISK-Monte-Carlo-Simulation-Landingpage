@@ -31,16 +31,21 @@ const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
 const purchaseLink = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const benefits = [
-  "Risiken probabilistisch bewerten und Bandbreiten sichtbar machen.",
+  "Budgetrisiken probabilistisch bewerten und Bandbreiten sichtbar machen.",
   "Optionale KI-Assistenz für Formeln und Berichtstexte nutzen.",
   "Lokal im Browser arbeiten und Projektdaten selbst verwalten.",
 ];
 
 const features = [
   {
+    icon: KeyRound,
+    title: "Bewertungsmodelle strukturieren",
+    text: "Fachliche Formelvorlagen nutzen, eigene Formeln erstellen, Parameter beziffern und Sofortergebnisse vor der Simulation prüfen.",
+  },
+  {
     icon: SlidersHorizontal,
     title: "Unsicherheiten modellieren",
-    text: "Bandbreitenparameter, Ereignisbausteine und Verteilungen wie Dreieck, Gleichverteilung, Normalverteilung und Beta-PERT strukturieren.",
+    text: "Bandbreiten mit Mindestwert, wahrscheinlichstem Wert und Maximalwert sowie Verteilungen wie Dreieck, Gleichverteilung, Normalverteilung und Beta-PERT strukturieren.",
   },
   {
     icon: Gauge,
@@ -107,14 +112,14 @@ const aiFeatures = [
 ];
 
 const audiences = [
-  "Projektverantwortliche",
+  "Projektverantwortliche im Bau",
   "Bauherren und Investoren",
   "Projektsteuerer",
-  "Bau- und Immobilienprofis",
+  "Immobilienentwickler",
   "Risikomanager",
+  "Projektmanager",
   "Controller und Consultants",
-  "Entscheider mit Kosten-, Termin- oder CAPEX-Risiken",
-  "Teams, die nachvollziehbare Managementaussagen brauchen",
+  "Selbstständige und kleine Teams",
 ];
 
 const faqs = [
@@ -137,6 +142,16 @@ const faqs = [
     question: "Welche Daten kann ich exportieren?",
     answer:
       "Die App unterstützt JSON-Import und JSON-Export für Projektdaten sowie CSV-Export der Simulationsergebnisse. Zusätzlich gibt es Datenvorlagen und CSV-Importe für Parameter und Risiken.",
+  },
+  {
+    question: "Kann ich eigene Formeln verwenden?",
+    answer:
+      "Ja. Eigene Formeln können erstellt, geprüft, gespeichert und wiederverwendet werden. Fachliche Formelvorlagen und eigene Bewertungslogik bleiben dabei klar getrennt.",
+  },
+  {
+    question: "Gibt es Demo-Daten?",
+    answer:
+      "Ja. Demo-Daten können genutzt werden, um den Workflow von Bewertungsmodell über Unsicherheiten bis zur Ergebnisanalyse schnell zu verstehen.",
   },
   {
     question: "Was kostet die Lizenz?",
@@ -246,17 +261,18 @@ function App() {
               {appName}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
-              Kosten-, Termin-, CAPEX- und Projektrisiken systematisch
-              modellieren, simulieren und als klare Managementaussage
-              aufbereiten. Browserbasiert, lokal speichernd und mit
-              optionaler KI-Unterstützung über eigenen API-Key.
+              Kosten-, Termin-, CAPEX- und Projektrisiken in Bau-, Immobilien-
+              und Projektumfeldern systematisch modellieren, simulieren und als
+              klare Managementaussage aufbereiten. Browserbasiert, lokal
+              speichernd und mit optionaler KI-Unterstützung über eigenen
+              API-Key.
             </p>
             <div className="mt-9 grid max-w-4xl gap-4 sm:grid-cols-2">
               <a
                 href={purchaseLink}
                 className="inline-flex min-h-[64px] items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-bold text-[#111827] shadow-[0_22px_54px_rgba(0,0,0,0.32)] transition hover:-translate-y-0.5 hover:bg-white/92"
               >
-                Jetzt kaufen
+                SMART RISK entdecken
                 <ChevronRight size={22} strokeWidth={2.6} aria-hidden="true" />
               </a>
               <a
@@ -336,6 +352,32 @@ function App() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-ink/10 bg-ivory">
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-16 sm:px-8 lg:grid-cols-2">
+          {[
+            {
+              icon: Target,
+              title: "Bewertungslogik vor der Simulation prüfen",
+              text: "Fachliche Formelbibliothek, eigene Formeln, Formelgenerator und Formelprüfung helfen, die Logik nachvollziehbar aufzubauen, bevor Werte als Unsicherheiten in die Simulation übergehen.",
+            },
+            {
+              icon: LineChart,
+              title: "Demo-Daten für schnellen Einstieg",
+              text: "Beispieldaten zeigen den Workflow vom Bewertungsmodell über Parameter und Szenarien bis zur Ergebnisanalyse. Das eignet sich für Produktdemo, Schulung und erste Orientierung.",
+            },
+          ].map(({ icon: Icon, title, text }) => (
+            <article
+              key={title}
+              className="rounded-md border border-ink/10 bg-white p-7 shadow-sm"
+            >
+              <Icon className="h-8 w-8 text-sage" aria-hidden="true" />
+              <h2 className="mt-5 text-2xl font-semibold">{title}</h2>
+              <p className="mt-4 leading-8 text-graphite">{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
