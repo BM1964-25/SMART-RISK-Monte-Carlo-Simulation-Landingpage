@@ -159,7 +159,10 @@ const audiences = [
   "Risikomanager",
   "Projektmanager",
   "Controller und Consultants",
-  "Selbstständige und kleine Teams",
+  "Kostenplaner und Cost Manager",
+  "Projektcontrolling und PMO",
+  "Technische Due Diligence",
+  "Generalunternehmer und Bauunternehmen",
 ];
 
 const audienceGroups = [
@@ -182,10 +185,10 @@ const audienceGroups = [
     text: "Risikomanager und Consultants übersetzen Eingangsannahmen in Perzentile, Sensitivitäten und Managementaussagen.",
   },
   {
-    icon: Laptop,
-    label: "Kleine Teams & Experten",
-    title: "Für fokussiertes Arbeiten ohne Cloud-Komplexität.",
-    text: "Selbstständige, Fachplaner und kleine Teams arbeiten browserbasiert, lokal speichernd und mit kontrollierbaren Export-Workflows.",
+    icon: FileText,
+    label: "Controlling & Fachberatung",
+    title: "Für Kostenplanung, PMO und Due-Diligence-Prüfung.",
+    text: "Cost Manager, Projektcontroller und technische Berater prüfen Annahmen, dokumentieren Entscheidungsgrundlagen und sichern Export-Workflows.",
   },
 ];
 
