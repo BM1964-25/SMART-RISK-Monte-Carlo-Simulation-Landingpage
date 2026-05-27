@@ -162,6 +162,7 @@ const audiences = [
   "Kostenplaner und Cost Manager",
   "Projektcontrolling und PMO",
   "Technische Due Diligence",
+  "Asset- und Portfolio Manager",
   "Generalunternehmer und Bauunternehmen",
 ];
 
@@ -176,7 +177,7 @@ const audienceGroups = [
     icon: LineChart,
     label: "Immobilien & Investment",
     title: "Für Vorhaben mit CAPEX-, Ertrags- und Szenariorisiken.",
-    text: "Immobilienentwickler, Investoren und Controller prüfen Annahmen, Zielbudgets und Risikopuffer für nachvollziehbare Freigabeentscheidungen.",
+    text: "Immobilienentwickler, Investoren sowie Asset- und Portfolio Manager prüfen Annahmen, Zielbudgets und Risikopuffer für nachvollziehbare Freigabeentscheidungen.",
   },
   {
     icon: ShieldCheck,
