@@ -1013,7 +1013,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="w-full border-t border-ink/15 bg-ivory">
+      <footer className="w-full border-t border-[#29476b] bg-[#102f52] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-5 text-center sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <div className="mx-auto flex items-center gap-3 lg:mx-0">
             <img
@@ -1022,15 +1022,15 @@ function App() {
               className="h-11 w-11 rounded-lg"
             />
             <div>
-              <p className="text-[0.68rem] font-extrabold uppercase leading-4 tracking-[0.18em] text-graphite">
+              <p className="text-[0.68rem] font-extrabold uppercase leading-4 tracking-[0.18em] text-white/62">
                 SmartBuilt-AI
               </p>
-              <p className="text-base font-extrabold leading-5 text-ink sm:text-lg">
+              <p className="text-base font-extrabold leading-5 text-white sm:text-lg">
                 {appName}
               </p>
             </div>
           </div>
-          <div className="text-sm font-semibold leading-6 text-graphite lg:text-right">
+          <div className="text-sm font-semibold leading-6 text-white/78 lg:text-right">
             <p>
               © 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger
             </p>
