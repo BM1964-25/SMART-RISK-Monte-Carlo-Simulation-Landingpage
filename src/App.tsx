@@ -636,8 +636,8 @@ function App() {
       </section>
 
       <section id="workspace" className="border-y border-ink/10 bg-paper">
-        <div className="px-5 py-20 sm:px-8">
-          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-end">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
                 Nutzung / Eigener Arbeitsbereich
@@ -652,7 +652,7 @@ function App() {
               Szenarien und Ergebnisanalyse in einem fokussierten Workspace.
             </p>
           </div>
-          <div className="mx-auto mt-12 w-full max-w-[1720px] overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
+          <div className="mt-12 overflow-hidden rounded-md border border-ink/10 bg-white shadow-panel">
             <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-4 sm:px-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
@@ -670,7 +670,7 @@ function App() {
               <img
                 src={currentWorkspaceScreenshot.image}
                 alt={`SMART RISK ${currentWorkspaceScreenshot.title}`}
-                className="aspect-[16/9] w-full rounded-md border border-ink/10 bg-white object-contain object-left-top transition"
+                className="h-auto w-full rounded-md border border-ink/10 bg-white transition"
               />
             </div>
             <div className="grid gap-2 border-t border-ink/10 bg-white p-3 sm:grid-cols-4 sm:p-4">
@@ -696,7 +696,7 @@ function App() {
               ))}
             </div>
           </div>
-          <div className="mx-auto mt-8 grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: Laptop,
@@ -729,7 +729,7 @@ function App() {
               </article>
             ))}
           </div>
-          <div className="mx-auto mt-8 flex max-w-7xl flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
               {["Lokaler Starter", "Browseroberfläche", "JSON- und CSV-Workflows"].map(
                 (item) => (
