@@ -28,7 +28,6 @@ import workspaceUncertainties from "./assets/smart-risk-workspace-uncertainties.
 import appIcon from "./assets/smart-risk-icon.png";
 
 const appName = "SMART RISK Monte-Carlo-Simulation";
-const appUrl = "https://bm1964-25.github.io/SMART-RISK-Monte-Carlo-Simulation/";
 const purchaseLink = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const benefits = [
@@ -744,7 +743,7 @@ function App() {
               )}
             </div>
             <a
-              href={appUrl}
+              href={purchaseLink}
               className="inline-flex items-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-3 font-semibold text-ink transition hover:bg-ivory"
             >
               App öffnen
