@@ -19,8 +19,12 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react";
+import { useState } from "react";
 import heroScreenshot from "./assets/smart-risk-dashboard-hero.png";
-import workspaceCurrent from "./assets/smart-risk-workspace-current.png";
+import workspaceDashboardNew from "./assets/smart-risk-workspace-dashboard-new.png";
+import workspaceResults from "./assets/smart-risk-workspace-results.png";
+import workspaceSensitivity from "./assets/smart-risk-workspace-sensitivity.png";
+import workspaceUncertainties from "./assets/smart-risk-workspace-uncertainties.png";
 import appIcon from "./assets/smart-risk-icon.png";
 
 const appName = "SMART RISK Monte-Carlo-Simulation";
@@ -111,11 +115,32 @@ const features = [
   },
 ];
 
-const workspacePreview = {
-  image: workspaceCurrent,
-  title: "Dashboard und Simulationsergebnisse",
-  text: "Projektstatus, Bewertungsmodell, Unsicherheiten, Perzentile und Verteilungen in einem lokalen Arbeitsbereich.",
-};
+const workspaceScreenshots = [
+  {
+    image: workspaceDashboardNew,
+    label: "Dashboard",
+    title: "Dashboard und Projektstatus",
+    text: "Projektstand, Zielbudget, P-Werte und Verteilungen in einem fokussierten Arbeitsbereich.",
+  },
+  {
+    image: workspaceUncertainties,
+    label: "Unsicherheiten",
+    title: "Bandbreitenparameter modellieren",
+    text: "Min, wahrscheinlichster Wert, Max und Verteilungen strukturiert für die Simulation erfassen.",
+  },
+  {
+    image: workspaceResults,
+    label: "Ergebnisanalyse",
+    title: "Perzentile und Zielbewertung",
+    text: "P10 bis P95, Überschreitungswahrscheinlichkeit und Managementhinweise nachvollziehbar auswerten.",
+  },
+  {
+    image: workspaceSensitivity,
+    label: "Sensitivität",
+    title: "Wichtigste Risikotreiber erkennen",
+    text: "Tornado-Diagramm und Treiber-Rangliste zeigen, welche Eingangsgrößen das Ergebnis prägen.",
+  },
+];
 
 const aiFeatures = [
   {
@@ -242,6 +267,9 @@ const faqs = [
 ];
 
 function App() {
+  const [activeWorkspaceScreenshot, setActiveWorkspaceScreenshot] = useState(0);
+  const currentWorkspaceScreenshot = workspaceScreenshots[activeWorkspaceScreenshot];
+
   return (
     <main className="bg-paper text-ink">
       <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/92 backdrop-blur-xl">
@@ -629,22 +657,44 @@ function App() {
             <div className="flex items-center justify-between gap-4 border-b border-ink/10 bg-white px-4 py-4 sm:px-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                  Aktueller App-Einblick
+                  App-Einblick {activeWorkspaceScreenshot + 1} / {workspaceScreenshots.length}
                 </p>
                 <h3 className="mt-1 text-lg font-semibold">
-                  {workspacePreview.title}
+                  {currentWorkspaceScreenshot.title}
                 </h3>
                 <p className="mt-1 text-sm leading-6 text-graphite">
-                  {workspacePreview.text}
+                  {currentWorkspaceScreenshot.text}
                 </p>
               </div>
             </div>
-            <div className="relative bg-[#edf3f8]">
+            <div className="relative bg-[#edf3f8] p-3 sm:p-4">
               <img
-                src={workspacePreview.image}
-                alt={`SMART RISK ${workspacePreview.title}`}
-                className="aspect-[1.12/1] w-full object-cover object-left-top transition"
+                src={currentWorkspaceScreenshot.image}
+                alt={`SMART RISK ${currentWorkspaceScreenshot.title}`}
+                className="aspect-[16/9] w-full rounded-md border border-ink/10 bg-white object-contain object-left-top transition"
               />
+            </div>
+            <div className="grid gap-2 border-t border-ink/10 bg-white p-3 sm:grid-cols-4 sm:p-4">
+              {workspaceScreenshots.map(({ label, title }, index) => (
+                <button
+                  type="button"
+                  key={label}
+                  onClick={() => setActiveWorkspaceScreenshot(index)}
+                  className={`rounded-md border px-4 py-3 text-left transition ${
+                    index === activeWorkspaceScreenshot
+                      ? "border-[#102f52] bg-[#102f52] text-white"
+                      : "border-ink/10 bg-paper text-ink hover:border-sage/35 hover:bg-[#edf3f8]"
+                  }`}
+                  aria-current={index === activeWorkspaceScreenshot}
+                >
+                  <span className="block text-xs font-bold uppercase tracking-[0.14em] opacity-70">
+                    {String(index + 1).padStart(2, "0")} · {label}
+                  </span>
+                  <span className="mt-1 block text-sm font-extrabold leading-5">
+                    {title}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -652,7 +702,7 @@ function App() {
               {
                 icon: Laptop,
                 title: "Direkt öffnen",
-                text: "Im Webbrowser starten, ohne separate Desktop-Installation.",
+                text: "Über den lokalen Starter öffnen und im Browser bedienen.",
               },
               {
                 icon: ShieldCheck,
@@ -682,7 +732,7 @@ function App() {
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
-              {["Keine Desktop-Installation", "Lokaler Browser-Speicher", "JSON- und CSV-Workflows"].map(
+              {["Lokaler Starter", "Browseroberfläche", "JSON- und CSV-Workflows"].map(
                 (item) => (
                   <span
                     key={item}
